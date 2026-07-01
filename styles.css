@@ -303,7 +303,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url('../imagenes/banner1.svg') center center / cover no-repeat;
+  background: url('img/banner1.svg') center center / cover no-repeat;
 }
 .hero__bg::after {
   content: '';

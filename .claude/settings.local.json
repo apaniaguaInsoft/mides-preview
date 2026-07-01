@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(git credential-osxkeychain *)",
+      "Bash(git remote *)",
+      "Bash(ssh *)",
+      "Bash([ -f \"/Users/apaniagua/Proyectos/mides-site/img/$f\" ])"
+    ]
+  }
+}
