@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ministerio de Desarrollo Social — Guatemala</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       PRE-HEADER — barra de aliados (no sticky)
+  ═══════════════════════════════════════════ -->
+  <div class="pre-header">
+    <div class="container pre-header__inner">
+      <a href="#" class="partner-btn">FODES</a>
+      <a href="#" class="partner-btn">Ley Temporal</a>
+      <a href="informacion-publica.html" class="partner-btn">Gobierno Abierto</a>
+      <a href="#" class="partner-btn">Adulto Mayor</a>
+      <a href="#" class="partner-btn">Mano a Mano</a>
+      <a href="#" class="partner-btn">Rendición de Cuentas</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER — sticky
+  ═══════════════════════════════════════════ -->
+  <header class="header">
+
+    <div class="header__top">
+      <div class="container header__top-inner">
+
+        <!-- Hamburger (visible solo en móvil) -->
+        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Logo MIDES -->
+        <a href="#" class="header__logo-link">
+          <img src="img/MIDES-HOR-COLOR.svg" alt="MIDES" class="header__logo-img" />
+        </a>
+
+        <!-- Derecha: redes + buscador + denuncia -->
+        <div class="header__top-right">
+          <div class="header__socials">
+            <span class="header__social-label">Síguenos</span>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="X" class="social-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok" class="social-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.72a4.85 4.85 0 01-1.01-.03z"/></svg>
+            </a>
+          </div>
+          <div class="header__search">
+            <input type="text" placeholder="Buscar…" class="header__search-input" />
+            <button class="header__search-btn" aria-label="Buscar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+          </div>
+          <a href="#" class="btn-denuncia">¡DENUNCIA!</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- fila de navegación (solo desktop) -->
+    <div class="header__nav-bar">
+      <div class="container header__nav-inner">
+        <nav class="header__nav" id="main-nav">
+          <ul class="nav-list">
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="tramites.html">Trámites</a></li>
+            <li><a href="informacion-publica.html">Información Pública</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+
+    <div class="container hero__content">
+      <p class="hero__pre">ACCIONES QUE</p>
+      <h1 class="hero__title">TRANSFORMAN</h1>
+      <p class="hero__sub">VIDAS Y FORTALECE EL</p>
+      <p class="hero__sub hero__sub--bold">BIENESTAR FAMILIAR</p>
+      <img src="../imagenes/whiteline.svg" alt="" class="hero__whiteline" />
+    </div>
+
+    <button class="hero__arrow hero__arrow--prev">&#8249;</button>
+    <button class="hero__arrow hero__arrow--next">&#8250;</button>
+    <div class="hero__dots">
+      <button class="hero__dot active"></button>
+      <button class="hero__dot"></button>
+      <button class="hero__dot"></button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROGRAMAS SOCIALES
+  ═══════════════════════════════════════════ -->
+  <section class="programas" id="programas">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title">Programas <span class="title-highlight">Sociales<img src="img/Linea-Resaltadora.svg" alt="" class="section-underline" /></span></h2>
+      </div>
+
+      <div class="programas__grid">
+
+        <div class="card-programa" data-modal="bono-social">
+          <div class="card-programa__icon">
+            <img src="img/bono_social.svg" alt="Bono Social" />
+          </div>
+          <span class="card-programa__label">Programa</span>
+          <h3 class="card-programa__name">Bono<br><strong>Social</strong></h3>
+        </div>
+
+        <div class="card-programa" data-modal="vida">
+          <div class="card-programa__icon">
+            <img src="img/vida.svg" alt="Programa Vida" />
+          </div>
+          <span class="card-programa__label">Programa</span>
+          <h3 class="card-programa__name"><strong>Vida</strong></h3>
+        </div>
+
+        <div class="card-programa" data-modal="comedor-social">
+          <div class="card-programa__icon">
+            <img src="img/comedor_social.svg" alt="Comedor Social" />
+          </div>
+          <span class="card-programa__label">Programa</span>
+          <h3 class="card-programa__name">Comedor<br><strong>Social</strong></h3>
+        </div>
+
+        <div class="card-programa" data-modal="bolsa-social">
+          <div class="card-programa__icon">
+            <img src="img/bolsa_social.svg" alt="Bolsa Social" />
+          </div>
+          <span class="card-programa__label">Programa</span>
+          <h3 class="card-programa__name">Bolsa<br><strong>Social</strong></h3>
+        </div>
+
+        <div class="card-programa" data-modal="beca-educacion">
+          <div class="card-programa__icon">
+            <img src="img/beca_social.svg" alt="Beca Social de Educación" />
+          </div>
+          <span class="card-programa__label">Beca Social de</span>
+          <h3 class="card-programa__name"><strong>Educación</strong></h3>
+        </div>
+
+        <div class="card-programa" data-modal="capacitacion-productiva">
+          <div class="card-programa__icon">
+            <img src="img/capacitacion_productiva.svg" alt="Capacitación Productiva" />
+          </div>
+          <span class="card-programa__label">Beca Social de</span>
+          <h3 class="card-programa__name">Capacitación<br><strong>Productiva</strong></h3>
+        </div>
+
+        <div class="card-programa card-programa--solo" data-modal="jovenes-protagonistas">
+          <div class="card-programa__icon">
+            <img src="img/jovenes_protagonistas.svg" alt="Jóvenes Protagonistas" />
+          </div>
+          <span class="card-programa__label">Programa</span>
+          <h3 class="card-programa__name">Jóvenes<br><strong>Protagonistas</strong></h3>
+        </div>
+
+      </div>
+
+      <!-- Banner GRATUITOS -->
+      <div class="gratuitos-banner">
+        <div class="gratuitos-banner__left">
+          <div class="gratuitos-banner__text">
+            <p class="gratuitos-banner__top">TODOS NUESTROS</p>
+            <p class="gratuitos-banner__programs">PROGRAMAS SOCIALES</p>
+            <div class="gratuitos-banner__son-wrap">
+              <span class="gratuitos-banner__son">SON</span>
+            </div>
+            <p class="gratuitos-banner__free">GRATUITOS</p>
+            <p class="gratuitos-banner__note">No debes pagar por <strong>NADA</strong></p>
+            <a href="#" class="gratuitos-banner__btn">
+              <strong>DENUNCIA AQUÍ</strong>
+              <span>CUALQUIER IRREGULARIDAD</span>
+            </a>
+            <div class="gratuitos-banner__pillars">
+              <div class="gratuitos-pillar">
+                <div class="gratuitos-pillar__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <span class="gratuitos-pillar__label">Seguros y confiables</span>
+              </div>
+              <div class="gratuitos-pillar">
+                <div class="gratuitos-pillar__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <span class="gratuitos-pillar__label">Para todas las familias</span>
+              </div>
+              <div class="gratuitos-pillar">
+                <div class="gratuitos-pillar__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </div>
+                <span class="gratuitos-pillar__label">Comprometidos contigo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gratuitos-banner__right">
+          <img src="img/d2a8995.jpg" alt="Beneficiaria recibiendo apoyo" class="gratuitos-banner__img" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       NOTICIAS
+  ═══════════════════════════════════════════ -->
+  <section class="noticias" id="noticias">
+    <div class="container">
+
+      <div class="section-header section-header--white">
+        <h2 class="section-title section-title--white"><span class="title-highlight title-highlight--white">Noticias<img src="img/Linea-Resaltadora.svg" alt=""/></span></h2>
+        <p class="noticias__subtitle">Entérate de las últimas noticias y actividades del Ministerio de Desarrollo Social.</p>
+      </div>
+
+      <div class="noticias__carousel">
+        <button class="noticias__arrow noticias__arrow--prev" aria-label="Anterior">&#8249;</button>
+
+        <div class="noticias__track">
+
+          <!-- Ejemplo 1: Noticia -->
+          <article class="noticia-card active">
+            <div class="noticia-card__body">
+              <div class="noticia-card__tags"><span class="news-tag">Noticias</span></div>
+              <h3 class="noticia-card__title">MIDES y municipalidades unen esfuerzos para llevar alimentación a familias vulnerables durante la canícula</h3>
+              <p class="noticia-card__desc">Con el compromiso de estar cerca de las familias que más lo necesitan, el Ministerio de Desarrollo Social fortaleció la coordinación con municipalidades para implementar Comedores Sociales móviles temporales en municipios priorizados por vulnerabilidad agropecuaria.</p>
+              <a href="noticia-01.html" class="noticias__link">Ver más <img src="img/Ver-mas-flechas.svg" alt="" class="noticias__link-arrow" /></a>
+            </div>
+            <div class="noticia-card__img-wrap">
+              <img src="img/news-01.jpg" alt="Noticia" class="noticia-card__img" />
+              <span class="noticia-card__date">24 junio, 2026</span>
+            </div>
+          </article>
+
+          <!-- Ejemplo 2: Prensa -->
+          <article class="noticia-card">
+            <div class="noticia-card__body">
+              <div class="noticia-card__tags"><span class="news-tag">Prensa</span></div>
+              <h3 class="noticia-card__title">Caseríos Tuiscacal y Talajchew son declarados Comunidades Ejemplares en San Juan Atitán</h3>
+              <p class="noticia-card__desc">El Ministerio de Desarrollo Social reconoce el esfuerzo colectivo de estas comunidades que han cumplido con todos los compromisos del programa Bono Social y se han convertido en modelo de corresponsabilidad social para el resto del país.</p>
+              <a href="prensa-01.html" class="noticias__link">Leer comunicado <img src="img/Ver-mas-flechas.svg" alt="" class="noticias__link-arrow" /></a>
+            </div>
+            <div class="noticia-card__img-wrap">
+              <img src="img/news-06.jpg" alt="Prensa" class="noticia-card__img" />
+              <span class="noticia-card__date">17 junio, 2026</span>
+            </div>
+          </article>
+
+          <!-- Ejemplo 3: Galería descargable -->
+          <article class="noticia-card">
+            <div class="noticia-card__body">
+              <div class="noticia-card__tags"><span class="news-tag">Galería</span></div>
+              <h3 class="noticia-card__title">Más de 2 mil 700 familias de Chiquimula reciben semillas de maíz resistente a la sequía</h3>
+              <p class="noticia-card__desc">Descarga las imágenes del evento de entrega de semillas mejoradas que el MIDES, junto con el MAGA, realizó en beneficio de familias agricultoras de los municipios priorizados de Chiquimula.</p>
+              <a href="galeria-01.html" class="noticias__link noticias__link--gallery">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Ver galería y descargar
+              </a>
+            </div>
+            <div class="noticia-card__img-wrap">
+              <img src="img/news-08.jpg" alt="Galería" class="noticia-card__img" />
+              <span class="noticia-card__date">17 junio, 2026</span>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="noticias__arrow noticias__arrow--next" aria-label="Siguiente">&#8250;</button>
+      </div>
+
+      <div class="noticias__dots">
+        <button class="noticias__dot active"></button>
+        <button class="noticias__dot"></button>
+        <button class="noticias__dot"></button>
+      </div>
+
+      <div class="noticias__footer">
+        <a href="noticias.html" class="btn-ver-todas">Ver todas las noticias</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       NOSOTROS
+  ═══════════════════════════════════════════ -->
+  <section class="nosotros" id="nosotros">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title">Acerca de <span class="title-highlight">MIDES<img src="../imagenes/line3.svg" alt="" class="section-underline" /></span></h2>
+        <p class="nosotros__intro">Somos el ente rector de los programas sociales en Guatemala, creado el 7 de febrero de 2012. Formulamos y coordinamos políticas públicas orientadas a mejorar el bienestar de la población en condición de vulnerabilidad, garantizando su acceso a servicios de salud, educación, alimentación y oportunidades de desarrollo integral.</p>
+      </div>
+
+      <div class="nosotros__cards">
+
+        <div class="card-nosotros">
+          <div class="card-nosotros__inner">
+            <div class="card-nosotros__front">
+              <div class="card-nosotros__icon"><img src="img/Icono-Mision.svg" alt="Misión" /></div>
+              <h3>Misión</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+            </div>
+            <div class="card-nosotros__back">
+              <h3>Misión</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+              <p>Institución del Organismo Ejecutivo rectora de políticas públicas orientadas a mejorar el bienestar de personas vulnerables en pobreza, generando oportunidades y capacidades para mejorar sus vidas en forma positiva y duradera.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-nosotros">
+          <div class="card-nosotros__inner">
+            <div class="card-nosotros__front">
+              <div class="card-nosotros__icon"><img src="img/Icono-Vison.svg" alt="Visión" /></div>
+              <h3>Visión</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+            </div>
+            <div class="card-nosotros__back">
+              <h3>Visión</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+              <p>Un modelo de desarrollo social incluyente que proteja a los más vulnerables y genere oportunidades para que cada guatemalteco alcance una vida digna.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-nosotros">
+          <div class="card-nosotros__inner">
+            <div class="card-nosotros__front">
+              <div class="card-nosotros__icon"><img src="img/Icono-Proposito.svg" alt="Propósito" /></div>
+              <h3>Propósito</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+            </div>
+            <div class="card-nosotros__back">
+              <h3>Propósito</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+              <p>Las personas vulnerables desarrollan sus capacidades con dignidad. La sociedad se moviliza para apoyarlas. El MIDES lidera con confianza, demuestra resultados e invierte en las familias más necesitadas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-nosotros">
+          <div class="card-nosotros__inner">
+            <div class="card-nosotros__front">
+              <div class="card-nosotros__icon"><img src="img/Icono-Valores.svg" alt="Valores" /></div>
+              <h3>Valores</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+            </div>
+            <div class="card-nosotros__back">
+              <h3>Valores</h3>
+              <img src="../imagenes/line3.svg" alt="" class="card-nosotros__line" />
+              <p>Transparencia, inclusión, corresponsabilidad y dignidad humana como pilares de nuestra acción institucional al servicio de los guatemaltecos.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nosotros__cta">
+        <a href="nosotros.html" class="btn-ver-mas">
+          Conocer más sobre nosotros
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+
+    <div class="footer__banner">
+      <div class="container">
+        <h2 class="footer__banner-title">ENTE RECTOR DE LOS PROGRAMAS <span class="title-highlight">SOCIALES<img src="../imagenes/line3.svg" alt="" class="section-underline" /></span></h2>
+      </div>
+    </div>
+
+    <div class="footer__main">
+      <div class="container footer__grid">
+
+        <!-- Columna 1: Logo -->
+        <div class="footer__col footer__col--logo">
+          <img src="img/MIDES-VERT-W.svg" alt="MIDES" class="footer__logo" />
+        </div>
+
+        <!-- Columna 2: Dirección -->
+        <div class="footer__col footer__col--contact">
+          <ul class="footer__contact">
+            <li><strong>Dirección:</strong><br>5a. Av. 8-78 Zona 9 Guatemala<br>Edificio Plaza Lauderdale</li>
+            <li><strong>Horario de atención:</strong><br>lunes a viernes<br>8:00 a 16:00 horas</li>
+            <li><strong>PBX:</strong><br>+502 2300-5400</li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Links -->
+        <div class="footer__col footer__col--links">
+          <ul class="footer__links">
+            <li><a href="#">Fondo de Desarrollo Social</a></li>
+            <li><a href="#">Fondo de Protección Social</a></li>
+            <li><a href="#">Registro Social de Hogares</a></li>
+            <li><a href="#">Acceso a la Información Pública</a></li>
+            <li><a href="#">Mano a Mano</a></li>
+            <li><a href="#">Denuncia</a></li>
+            <li><a href="#">GEDS</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <span class="footer__midesgt">Síguenos</span>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.72a4.85 4.85 0 01-1.01-.03z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL PROGRAMAS
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal">
+      <button class="modal__close" id="modal-close" aria-label="Cerrar">&#10005;</button>
+      <div class="modal__header">
+        <div class="modal__icon" id="modal-icon"></div>
+        <div>
+          <p class="modal__label" id="modal-label"></p>
+          <h2 class="modal__title" id="modal-title"></h2>
+        </div>
+      </div>
+      <div class="modal__body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Datos de los programas -->
+  <script id="programa-data" type="application/json">
+  {
+    "bono-social": {
+      "label": "Programa",
+      "title": "Bono Social",
+      "icon": "img/bono_social.svg",
+      "page": "bono-social.html",
+      "desc": "Transferencia de <strong>Q.500.00</strong> para familias en pobreza con niños de 0–14 años o mujeres embarazadas, sujeta a corresponsabilidades en salud o educación.",
+      "chips": ["Salud", "Educación", "Crecer Sano"],
+      "sections": [
+        {
+          "titulo": "¿Quién aplica?",
+          "items": ["Familias en pobreza o pobreza extrema", "Con niños de 0–14 años o mujer embarazada", "Titular mayor de edad con DPI"]
+        },
+        {
+          "titulo": "Compromisos",
+          "items": ["Asistir al centro de salud (niños 0–5 y embarazadas)", "Inscripción y asistencia escolar (niños 6–14)", "Firma de Carta de Aceptación"]
+        }
+      ]
+    },
+    "vida": {
+      "label": "Programa",
+      "title": "Vida",
+      "icon": "img/vida.svg",
+      "page": "vida.html",
+      "desc": "Transferencia de <strong>Q.1,500.00</strong> periódicos para niñas y adolescentes embarazadas o madres, menores de 14 años, víctimas de violencia sexual con caso judicializado, condicionada a controles de salud según protocolos del MSPAS.",
+      "chips": ["Salud", "Nacional", "Violencia Sexual"],
+      "sections": [
+        {
+          "titulo": "¿Quién aplica?",
+          "items": ["Niña o adolescente embarazada o madre, menor de 14 años", "Víctima de violencia sexual con caso judicializado", "Guatemalteca, sin matrimonio ni pareja", "Con titular asignado por juez (padre, madre o tutor)"]
+        },
+        {
+          "titulo": "Corresponsabilidades",
+          "items": ["Firma de Carta de Aceptación y conformación de expediente", "Asistencia a controles de embarazo (protocolo MSPAS)", "Asistencia de la hija/o a chequeos programados del MSPAS"]
+        }
+      ]
+    },
+    "comedor-social": { "label": "Programa", "title": "Comedor Social", "icon": "img/comedor_social.svg", "desc": "Información próximamente.", "chips": [], "sections": [] },
+    "bolsa-social": {
+      "label": "Programa",
+      "title": "Bolsa Social",
+      "icon": "img/bolsa_social.svg",
+      "page": "bolsa-social.html",
+      "desc": "Transferencia de <strong>Q.250.00</strong> periódicos para familias en pobreza y pobreza extrema del departamento de Guatemala, acreditados mediante tarjeta de débito para compra de productos de la canasta básica alimentaria en establecimientos autorizados.",
+      "chips": ["Alimentación", "Área Urbana", "Área Rural"],
+      "sections": [
+        {
+          "titulo": "¿Quién aplica?",
+          "items": ["Guatemalteco/a mayor de edad", "Residente del departamento de Guatemala", "En situación de pobreza o pobreza extrema", "Con hijos de 0 a 15 años o adulto mayor de 65 años"]
+        },
+        {
+          "titulo": "Corresponsabilidades",
+          "items": ["Asistir a charlas informativas del Ministerio", "Inscribir a hijos en edad escolar a un centro educativo"]
+        }
+      ]
+    },
+    "beca-educacion": {
+      "label": "Beca Social de",
+      "title": "Educación",
+      "icon": "img/beca_social.svg",
+      "page": "beca-educacion.html",
+      "desc": "Programa social que asigna Transferencias Monetarias Condicionadas a personas en pobreza y pobreza extrema para <strong>permanecer en estudios formales</strong>, fortalecer habilidades e integrarse al mercado laboral, con modalidades en Educación Media, Superior, Empleo y Artesano.",
+      "chips": ["Educación Media", "Educación Superior", "Empleo", "Artesano"],
+      "sections": [
+        {
+          "titulo": "¿Quién aplica?",
+          "items": ["Guatemalteco/a de 11 a 24 años", "Estudiando en educación media pública o privada avalada por Mineduc", "En situación de pobreza o pobreza extrema", "Sin otra beca o programa social de la misma naturaleza"]
+        },
+        {
+          "titulo": "Corresponsabilidades",
+          "items": ["Asistencia mínima del 80% al centro educativo", "Aprobar el año escolar cursado", "Presentar documentación requerida en el plazo establecido", "Actualizar datos mínimo una vez al año"]
+        }
+      ]
+    },
+    "capacitacion-productiva": { "label": "Beca Social de", "title": "Capacitación Productiva", "icon": "img/capacitacion_productiva.svg", "desc": "Información próximamente.", "chips": [], "sections": [] },
+    "jovenes-protagonistas": { "label": "Programa", "title": "Jóvenes Protagonistas", "icon": "img/jovenes_protagonistas.svg", "desc": "Información próximamente.", "chips": [], "sections": [] }
+  }
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>
