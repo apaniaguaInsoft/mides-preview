@@ -5,7 +5,11 @@
       "Bash(git credential-osxkeychain *)",
       "Bash(git remote *)",
       "Bash(ssh *)",
-      "Bash([ -f \"/Users/apaniagua/Proyectos/mides-site/img/$f\" ])"
+      "Bash([ -f \"/Users/apaniagua/Proyectos/mides-site/img/$f\" ])",
+      "WebFetch(domain:www.mides.gob.gt)",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://www.mides.gob.gt/mesas-tematicas/\")",
+      "Bash(python3 -c 'import sys,html; from html.parser import HTMLParser; *)",
+      "WebSearch"
     ]
   }
 }
