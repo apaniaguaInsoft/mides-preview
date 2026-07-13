@@ -471,6 +471,16 @@ img { display: block; max-width: 100%; }
 }
 .card-programa--solo { grid-column: 2; }
 
+.programas__last-row {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.programas__last-row .card-programa {
+  flex: 0 0 calc((100% - 36px) / 3);
+}
+
 .card-programa__icon {
   width: 68px;
   height: 68px;
@@ -4401,4 +4411,132 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-tire.pn
 }
 @media (max-width: 480px) {
   .equipo__grid { grid-template-columns: 1fr; }
+}
+
+/* ── DOCUMENTOS ─────────────────────────────────── */
+.docs-section { padding: 56px 0 72px; background: #F4F6F9; }
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.doc-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid #E2E8F0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.doc-card:hover {
+  box-shadow: 0 8px 28px rgba(34,62,113,0.12);
+  transform: translateY(-3px);
+}
+
+.doc-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+}
+.doc-card__header--blue  { background: #223E71; }
+.doc-card__header--teal  { background: #0891B2; }
+.doc-card__header--amber { background: #D97706; }
+.doc-card__header--gray  { background: #475569; }
+
+.doc-card__icon {
+  width: 44px;
+  height: 44px;
+  color: rgba(255,255,255,0.9);
+}
+
+.doc-card__type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.doc-card__body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.doc-card__cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748B;
+  margin-bottom: 8px;
+}
+
+.doc-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1E293B;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.doc-card__desc {
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.doc-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.doc-card__year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+.doc-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #223E71;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.doc-card__btn:hover { gap: 10px; }
+
+.docs-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 64px 0;
+  color: #94A3B8;
+  text-align: center;
+}
+.docs-empty p { font-size: 1rem; }
+
+@media (max-width: 900px) {
+  .docs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .docs-grid { grid-template-columns: 1fr; }
 }
