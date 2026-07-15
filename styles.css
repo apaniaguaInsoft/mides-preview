@@ -1638,6 +1638,7 @@ img { display: block; max-width: 100%; }
   font-family: 'Altivo', sans-serif;
   font-weight: 800;
   font-size: 0.9rem;
+  line-height: 1.5;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   padding: 10px 20px;

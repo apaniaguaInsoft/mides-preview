@@ -41,7 +41,11 @@
       "Bash(python3 -m json.tool /Users/apaniagua/Proyectos/mides-site/wp-theme/mides-child/blocks/programas-sociales/block.json)",
       "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/settings)",
       "Bash(python3 *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(npx playwright *)",
+      "Bash(npm list *)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/quejas_btn.png --window-size=1200,900 \"file:///Users/apaniagua/Proyectos/mides-site/index.html\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/quejas_footer.png --window-size=1200,900 --virtual-time-budget=2000 \"file:///Users/apaniagua/Proyectos/mides-site/index.html#footer\")"
     ]
   },
   "enabledMcpjsonServers": [
