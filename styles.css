@@ -1,4 +1,12 @@
 /* ═══════════════════════════════════════════════
+   OVERRIDES ASTRA
+═══════════════════════════════════════════════ */
+/* Astra base CSS agrega margin:4em 0 a #primary — lo eliminamos globalmente */
+#primary {
+  margin: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════
    TIPOGRAFIA — Altivo
 ═══════════════════════════════════════════════ */
 @font-face {
@@ -34,10 +42,10 @@
    RESET & BASE
 ═══════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 110%; }
 body {
   font-family: 'Altivo', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: #2D3748;
   line-height: 1.6;
   background: url('img/fondo.svg') center top / cover no-repeat fixed;
@@ -133,6 +141,29 @@ img { display: block; max-width: 100%; }
 .partner-btn:hover {
   color: #fff;
 }
+
+/* wp_nav_menu pre-header (menu_class="pre-header__nav") */
+.pre-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.pre-header__nav > li > a {
+  font-family: 'Altivo', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  padding: 4px 10px;
+  white-space: nowrap;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.pre-header__nav > li > a:hover { color: #fff; }
 
 /* Derecha: redes + buscador en fila */
 .header__top-right {
@@ -248,13 +279,19 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 .nav-list > li > a:hover,
-.nav-list > li > a.active {
+.nav-list > li > a.active,
+.nav-list > li.current-menu-item > a,
+.nav-list > li.current-menu-ancestor > a {
   color: #192854;
 }
-.nav-list > li > a.active {
+.nav-list > li > a.active,
+.nav-list > li.current-menu-item > a,
+.nav-list > li.current-menu-ancestor > a {
   position: relative;
 }
-.nav-list > li > a.active::after {
+.nav-list > li > a.active::after,
+.nav-list > li.current-menu-item > a::after,
+.nav-list > li.current-menu-ancestor > a::after {
   content: '';
   position: absolute;
   bottom: -6px;
@@ -286,6 +323,27 @@ img { display: block; max-width: 100%; }
 }
 .btn-denuncia:hover { background: #192854; transform: translateY(-1px); }
 
+.btn-quejas {
+  background: #F2A119;
+  color: #192854;
+  font-family: 'Altivo', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0 24px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-quejas:hover { background: #d98c0e; transform: translateY(-1px); }
+
 /* En desktop el nav-bar no necesita btn-denuncia (está en top-right) */
 
 /* ═══════════════════════════════════════════════
@@ -299,6 +357,7 @@ img { display: block; max-width: 100%; }
   margin-top: -20px;
 }
 
+/* Slide estático (HTML puro) */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -310,6 +369,29 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+}
+
+/* Slides dinámicos (WordPress CPT) */
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero__slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+.hero__slide .hero__bg {
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* la URL viene del inline style del PHP */
+  background-image: none;
 }
 
 /* Decorative large O */
@@ -352,6 +434,8 @@ img { display: block; max-width: 100%; }
   color: rgba(255,255,255,0.9);
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 0px !important;
 }
 
 .hero__title {
@@ -361,8 +445,8 @@ img { display: block; max-width: 100%; }
   font-weight: 700;
   color: #CCF0FF;
   text-transform: uppercase;
-  line-height: 1;
   letter-spacing: 2px;
+  margin: 0;
 }
 
 .hero__sub {
@@ -373,12 +457,15 @@ img { display: block; max-width: 100%; }
   letter-spacing: 2px;
   line-height: 1;
   text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 0px !important;
 }
 .hero__sub--bold {
   font-size: clamp(1rem, 2.2vw, 1.4rem);
   font-weight: 400;
   line-height: 1;
   color: #fff;
+  margin: 0;
 }
 
 .hero__arrow {
@@ -390,6 +477,9 @@ img { display: block; max-width: 100%; }
   color: #fff;
   width: 44px;
   height: 44px;
+  padding: 0;
+  min-width: unset;
+  min-height: unset;
   border-radius: 50%;
   font-size: 2rem;
   line-height: 1;
@@ -415,10 +505,14 @@ img { display: block; max-width: 100%; }
 }
 .hero__dot {
   width: 10px; height: 10px;
+  padding: 0;
+  min-width: unset;
+  flex-shrink: 0;
   border-radius: 50%;
   background: rgba(255,255,255,0.4);
   border: none;
   cursor: pointer;
+  line-height: 1;
   transition: background 0.2s, transform 0.2s;
 }
 .hero__dot.active { background: #fff; transform: scale(1.3); }
@@ -1663,6 +1757,7 @@ img { display: block; max-width: 100%; }
   .header__logo-img { height: 52px; }
   .header__search { display: none; }
   .btn-denuncia { font-size: 0.8rem; padding: 4px 14px; }
+  .btn-quejas   { font-size: 0.8rem; padding: 4px 12px; }
 
   /* Hero */
   .hero { height: 420px; }

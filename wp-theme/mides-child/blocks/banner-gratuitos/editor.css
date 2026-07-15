@@ -1,0 +1,80 @@
+.mides-banner-gratuitos-editor {
+  background: #192854;
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.mides-banner-gratuitos-editor__text {
+  flex: 1;
+}
+
+.mides-banner-gratuitos-editor__top {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.mides-banner-gratuitos-editor__programs {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.mides-banner-gratuitos-editor__son {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin: 2px 0;
+}
+
+.mides-banner-gratuitos-editor__free {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #F2A119;
+  margin: 4px 0;
+  line-height: 1;
+}
+
+.mides-banner-gratuitos-editor__note {
+  font-size: 0.75rem;
+  margin: 4px 0 10px;
+  opacity: 0.9;
+}
+
+.mides-banner-gratuitos-editor__btn {
+  background: #F2A119;
+  color: #192854;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.mides-banner-gratuitos-editor__img-wrap {
+  width: 140px;
+  height: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mides-banner-gratuitos-editor__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mides-banner-gratuitos-editor__img-placeholder {
+  font-size: 2rem;
+  opacity: 0.4;
+}

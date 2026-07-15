@@ -1,0 +1,63 @@
+/* Preview del bloque en el editor de Gutenberg */
+.mides-hero-editor-preview {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #192854;
+}
+.mides-hero-editor-preview__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: #192854;
+}
+.mides-hero-editor-preview__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+}
+.mides-hero-editor-preview__content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 520px;
+}
+.mides-hero-editor-preview__content .hero__pre {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 2px;
+  margin: 0;
+  margin-bottom: 0 !important;
+}
+.mides-hero-editor-preview__content .hero__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #CCF0FF;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.mides-hero-editor-preview__content .hero__sub {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.mides-hero-editor-preview__badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 3;
+}

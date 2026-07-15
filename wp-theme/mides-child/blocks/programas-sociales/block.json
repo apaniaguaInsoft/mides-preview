@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/programas-sociales",
+  "title": "Programas Sociales",
+  "description": "Sección de Programas e Intervenciones Sociales con grilla de tarjetas editables.",
+  "category": "layout",
+  "icon": "grid-view",
+  "keywords": ["programas", "servicios", "intervenciones", "social", "mides"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align":          { "type": "string", "default": "full" },
+    "titleBefore":    { "type": "string", "default": "Programas e" },
+    "titleHighlight": { "type": "string", "default": "Intervenciones Sociales" },
+    "programs": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "iconId":    { "type": "number", "default": 0 },
+          "iconUrl":   { "type": "string", "default": "" },
+          "iconAlt":   { "type": "string", "default": "" },
+          "label":     { "type": "string", "default": "Programa" },
+          "name":      { "type": "string", "default": "" },
+          "nameBold":  { "type": "string", "default": "" },
+          "modal":     { "type": "string", "default": "" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

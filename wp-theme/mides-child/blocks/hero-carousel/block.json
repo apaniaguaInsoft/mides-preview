@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/hero-carousel",
+  "title": "Hero Carrusel",
+  "description": "Carrusel de slides para el hero de la página.",
+  "category": "media",
+  "icon": "images-alt2",
+  "keywords": ["hero", "carrusel", "banner", "slider"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align": { "type": "string", "default": "full" },
+    "slides": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "bgId":  { "type": "number", "default": 0 },
+          "bgUrl": { "type": "string", "default": "" },
+          "pre":   { "type": "string", "default": "" },
+          "title": { "type": "string", "default": "" },
+          "sub1":  { "type": "string", "default": "" },
+          "sub2":  { "type": "string", "default": "" }
+        }
+      }
+    },
+    "interval": { "type": "number", "default": 5 }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle": "file:./editor.css"
+}

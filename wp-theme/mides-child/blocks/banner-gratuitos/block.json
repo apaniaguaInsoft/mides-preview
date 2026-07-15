@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/banner-gratuitos",
+  "title": "Banner Programas Gratuitos",
+  "description": "Banner «Todos nuestros programas sociales son gratuitos» con imagen lateral y botón de denuncia.",
+  "category": "layout",
+  "icon": "megaphone",
+  "keywords": ["gratuitos", "denuncia", "banner", "programas", "mides"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align":         { "type": "string", "default": "full" },
+    "imageId":       { "type": "number", "default": 0 },
+    "imageUrl":      { "type": "string", "default": "" },
+    "imageAlt":      { "type": "string", "default": "Beneficiaria recibiendo apoyo" },
+    "pillar1":       { "type": "string", "default": "Seguros y confiables" },
+    "pillar2":       { "type": "string", "default": "Para todas las familias" },
+    "pillar3":       { "type": "string", "default": "Comprometidos contigo" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

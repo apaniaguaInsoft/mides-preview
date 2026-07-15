@@ -9,7 +9,40 @@
       "WebFetch(domain:www.mides.gob.gt)",
       "Bash(curl -s -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://www.mides.gob.gt/mesas-tematicas/\")",
       "Bash(python3 -c 'import sys,html; from html.parser import HTMLParser; *)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(node *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s http://localhost:8080/wp-json/)",
+      "Bash(python3 -m json.tool)",
+      "Bash(docker exec wordpress_app *)",
+      "Bash(docker exec wordpress_db *)",
+      "Bash(curl -s -u \"admin:admin123\" \"http://localhost:8080/wp-json/wp/v2/users/me\")",
+      "Bash(curl -s -u \"admin:JSbzSR8f4FYfbpKUlNUWqSBJ\" \"http://localhost:8080/wp-json/wp/v2/users/me\")",
+      "Bash(curl -s -u \"admin:JSbzSR8f4FYfbpKUlNUWqSBJ\" \"http://localhost:8080/wp-json/mcp/mcp-adapter-default-server\")",
+      "Bash(curl -sv -u \"admin:JSbzSR8f4FYfbpKUlNUWqSBJ\" \"http://localhost:8080/wp-json/mcp/mcp-adapter-default-server\")",
+      "Bash(npx -y @automattic/mcp-wordpress-remote@latest --version)",
+      "Bash(curl -s -X POST -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/menus -H 'Content-Type: application/json' -d '{\"name\":\"Menú Pre-Header\",\"slug\":\"menu-pre-header\"}')",
+      "Bash(curl -s -X POST -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/menus -H 'Content-Type: application/json' -d '{\"name\":\"Menú Principal\",\"slug\":\"menu-principal\"}')",
+      "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/menus)",
+      "Bash(docker cp *)",
+      "Bash(curl -s \"http://localhost:8080/\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -X DELETE -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/menu-items/112?force=true)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/wp-content/themes/mides-child/fonts/Altivo-Light.otf)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/wp-content/themes/mides-child/img/MIDES-HOR-COLOR.svg)",
+      "Bash(grep -v \"^$\")",
+      "mcp__wordpress__mcp-adapter-discover-abilities",
+      "Bash(xargs ls -lt)",
+      "Bash(curl -s http://localhost:8080/)",
+      "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/pages/25?_fields=content,title)",
+      "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ 'http://localhost:8080/wp-json/wp/v2/pages/25?context=edit&_fields=content')",
+      "Bash(python3 -m json.tool /Users/apaniagua/Proyectos/mides-site/wp-theme/mides-child/blocks/programas-sociales/block.json)",
+      "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/settings)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "wordpress"
+  ]
 }
