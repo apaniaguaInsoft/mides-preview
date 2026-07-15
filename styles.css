@@ -1817,8 +1817,10 @@ img { display: block; max-width: 100%; }
 
   /* Programas */
   .programas { padding: 40px 0 32px; }
-  .programas__grid { grid-template-columns: 1fr; }
-  .card-programa--solo { grid-column: 1; max-width: 100%; }
+  .programas__grid { grid-template-columns: repeat(2, 1fr); }
+  .card-programa--solo { grid-column: 1 / -1; max-width: 50%; margin-left: auto; margin-right: auto; }
+  .programas__last-row { flex-wrap: wrap; }
+  .programas__last-row .card-programa { flex: 0 0 calc((100% - 18px) / 2); }
 
   /* Gratuitos banner */
   .gratuitos-banner__left { padding: 28px 20px; }
@@ -1832,6 +1834,16 @@ img { display: block; max-width: 100%; }
   /* Noticias */
   .noticias { padding: 40px 0 32px; }
   .noticias__arrow { display: none; }
+  .noticias__track { height: 500px; }
+  .noticia-card { grid-template-columns: 1fr; }
+  .noticia-card__img-wrap { height: 220px; order: -1; }
+  .noticia-card__body { padding: 20px; }
+  .noticia-card__desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
   /* Nosotros */
   .nosotros { padding: 44px 0; }
