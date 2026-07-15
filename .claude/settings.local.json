@@ -39,7 +39,8 @@
       "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/pages/25?_fields=content,title)",
       "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ 'http://localhost:8080/wp-json/wp/v2/pages/25?context=edit&_fields=content')",
       "Bash(python3 -m json.tool /Users/apaniagua/Proyectos/mides-site/wp-theme/mides-child/blocks/programas-sociales/block.json)",
-      "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/settings)"
+      "Bash(curl -s -u admin:JSbzSR8f4FYfbpKUlNUWqSBJ http://localhost:8080/wp-json/wp/v2/settings)",
+      "Bash(python3 *)"
     ]
   },
   "enabledMcpjsonServers": [
