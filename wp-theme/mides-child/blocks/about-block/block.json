@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/about-block",
+  "title": "About Block",
+  "description": "Sección de texto enriquecido con imagen lateral, reversible.",
+  "category": "layout",
+  "icon": "align-pull-right",
+  "supports": { "html": false, "align": ["full"], "spacing": false },
+  "attributes": {
+    "align":       { "type": "string",  "default": "full" },
+    "titulo":      { "type": "string",  "default": "" },
+    "cuerpo":      { "type": "string",  "default": "" },
+    "imagenId":    { "type": "number",  "default": 0 },
+    "imagenUrl":   { "type": "string",  "default": "" },
+    "imagenAlt":   { "type": "string",  "default": "" },
+    "reverso":     { "type": "boolean", "default": false },
+    "fondoAlt":    { "type": "boolean", "default": false }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

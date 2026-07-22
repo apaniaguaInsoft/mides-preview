@@ -8,6 +8,7 @@
   var MediaUploadCheck  = wp.blockEditor.MediaUploadCheck;
   var PanelBody         = wp.components.PanelBody;
   var TextControl       = wp.components.TextControl;
+  var TextareaControl   = wp.components.TextareaControl;
   var SelectControl     = wp.components.SelectControl;
   var Button            = wp.components.Button;
   var Placeholder       = wp.components.Placeholder;
@@ -42,9 +43,55 @@
         props.setAttributes({
           programs: programs.concat([{
             iconId: 0, iconUrl: '', iconAlt: '',
-            label: 'Programa', name: '', nameBold: '', modal: ''
+            label: 'Programa', name: '', nameBold: '', modal: '',
+            desc: '', page: '', chips: [], sections: []
           }])
         });
+      }
+
+      function setChip(progIndex, chipIndex, value) {
+        var chips = (programs[progIndex].chips || []).slice();
+        chips[chipIndex] = value;
+        setProgram(progIndex, 'chips', chips);
+      }
+      function addChip(progIndex) {
+        setProgram(progIndex, 'chips', (programs[progIndex].chips || []).concat(['']));
+      }
+      function removeChip(progIndex, chipIndex) {
+        setProgram(progIndex, 'chips', (programs[progIndex].chips || []).filter(function (_, i) { return i !== chipIndex; }));
+      }
+
+      function setSection(progIndex, secIndex, key, value) {
+        var sections = (programs[progIndex].sections || []).slice();
+        sections[secIndex] = Object.assign({}, sections[secIndex]);
+        sections[secIndex][key] = value;
+        setProgram(progIndex, 'sections', sections);
+      }
+      function setSectionItem(progIndex, secIndex, itemIndex, value) {
+        var sections = (programs[progIndex].sections || []).slice();
+        sections[secIndex] = Object.assign({}, sections[secIndex]);
+        var items = (sections[secIndex].items || []).slice();
+        items[itemIndex] = value;
+        sections[secIndex].items = items;
+        setProgram(progIndex, 'sections', sections);
+      }
+      function addSection(progIndex) {
+        setProgram(progIndex, 'sections', (programs[progIndex].sections || []).concat([{ titulo: '', items: [] }]));
+      }
+      function removeSection(progIndex, secIndex) {
+        setProgram(progIndex, 'sections', (programs[progIndex].sections || []).filter(function (_, i) { return i !== secIndex; }));
+      }
+      function addSectionItem(progIndex, secIndex) {
+        var sections = (programs[progIndex].sections || []).slice();
+        sections[secIndex] = Object.assign({}, sections[secIndex]);
+        sections[secIndex].items = (sections[secIndex].items || []).concat(['']);
+        setProgram(progIndex, 'sections', sections);
+      }
+      function removeSectionItem(progIndex, secIndex, itemIndex) {
+        var sections = (programs[progIndex].sections || []).slice();
+        sections[secIndex] = Object.assign({}, sections[secIndex]);
+        sections[secIndex].items = (sections[secIndex].items || []).filter(function (_, i) { return i !== itemIndex; });
+        setProgram(progIndex, 'sections', sections);
       }
 
       function removeProgram(index) {
@@ -150,6 +197,86 @@
               placeholder: 'bono-social',
               help: 'Identificador para abrir el modal al hacer clic.'
             }),
+
+            /* Contenido del modal */
+            el('hr', { style: { margin: '12px 0', borderColor: '#e0e0e0' } }),
+            el('p', { style: { fontWeight: 600, marginBottom: '8px', fontSize: '11px', textTransform: 'uppercase', color: '#555' } }, 'Contenido del modal'),
+
+            el(TextareaControl, {
+              label: 'Descripción',
+              value: prog.desc || '',
+              onChange: function (v) { setProgram(i, 'desc', v); },
+              placeholder: 'Descripción del programa...',
+              rows: 3,
+              help: 'Acepta HTML básico (<strong>, <em>).'
+            }),
+
+            el(TextControl, {
+              label: 'URL "Más información"',
+              value: prog.page || '',
+              onChange: function (v) { setProgram(i, 'page', v); },
+              placeholder: 'bono-social.html'
+            }),
+
+            /* Chips */
+            el('p', { style: { fontWeight: 600, marginBottom: '4px', marginTop: '8px', fontSize: '12px' } }, 'Chips / etiquetas'),
+            (prog.chips || []).map(function (chip, ci) {
+              return el('div', { key: ci, style: { display: 'flex', gap: '4px', marginBottom: '4px' } },
+                el(TextControl, {
+                  value: chip,
+                  onChange: function (v) { setChip(i, ci, v); },
+                  placeholder: 'Ej: Salud',
+                  style: { flex: 1 }
+                }),
+                el(Button, {
+                  onClick: function () { removeChip(i, ci); },
+                  variant: 'link', isDestructive: true
+                }, '✕')
+              );
+            }),
+            el(Button, {
+              onClick: function () { addChip(i); },
+              variant: 'secondary',
+              style: { width: '100%', marginBottom: '12px' }
+            }, '+ Chip'),
+
+            /* Secciones del modal */
+            el('p', { style: { fontWeight: 600, marginBottom: '4px', fontSize: '12px' } }, 'Secciones'),
+            (prog.sections || []).map(function (sec, si) {
+              return el('div', { key: si, style: { border: '1px solid #ddd', borderRadius: '4px', padding: '8px', marginBottom: '8px' } },
+                el('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' } },
+                  el('strong', { style: { fontSize: '12px' } }, 'Sección ' + (si + 1)),
+                  el(Button, { onClick: function () { removeSection(i, si); }, variant: 'link', isDestructive: true }, '✕ Eliminar')
+                ),
+                el(TextControl, {
+                  label: 'Título',
+                  value: sec.titulo || '',
+                  onChange: function (v) { setSection(i, si, 'titulo', v); },
+                  placeholder: '¿Quién aplica?'
+                }),
+                el('p', { style: { fontSize: '11px', fontWeight: 600, marginBottom: '4px' } }, 'Ítems'),
+                (sec.items || []).map(function (item, ii) {
+                  return el('div', { key: ii, style: { display: 'flex', gap: '4px', marginBottom: '4px' } },
+                    el(TextControl, {
+                      value: item,
+                      onChange: function (v) { setSectionItem(i, si, ii, v); },
+                      placeholder: 'Ítem...'
+                    }),
+                    el(Button, { onClick: function () { removeSectionItem(i, si, ii); }, variant: 'link', isDestructive: true }, '✕')
+                  );
+                }),
+                el(Button, {
+                  onClick: function () { addSectionItem(i, si); },
+                  variant: 'secondary',
+                  style: { width: '100%' }
+                }, '+ Ítem')
+              );
+            }),
+            el(Button, {
+              onClick: function () { addSection(i); },
+              variant: 'secondary',
+              style: { width: '100%', marginBottom: '8px' }
+            }, '+ Sección'),
 
             /* Botones mover / eliminar */
             el('div', { style: { display: 'flex', gap: '8px', marginTop: '8px' } },

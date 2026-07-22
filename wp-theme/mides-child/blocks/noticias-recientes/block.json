@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/noticias-recientes",
+  "title": "Noticias Recientes",
+  "description": "Sección de noticias recientes con carrusel configurable por tipo/categoría.",
+  "category": "layout",
+  "icon": "media-document",
+  "keywords": ["noticias", "prensa", "blog", "mides"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align":         { "type": "string", "default": "full" },
+    "titulo":        { "type": "string", "default": "Noticias" },
+    "subtitulo":     { "type": "string", "default": "Entérate de las últimas noticias y actividades del Ministerio de Desarrollo Social." },
+    "cantidad":      { "type": "number", "default": 3 },
+    "categorias":    { "type": "array",  "default": [], "items": { "type": "number" } },
+    "urlVerTodas":   { "type": "string", "default": "" },
+    "textoVerTodas": { "type": "string", "default": "Ver todas las noticias" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

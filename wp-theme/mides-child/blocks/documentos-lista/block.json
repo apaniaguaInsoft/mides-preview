@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/documentos-lista",
+  "title": "Documentos — Lista",
+  "description": "Listado de documentos oficiales del MIDES con búsqueda, filtros por categoría y paginación.",
+  "category": "layout",
+  "icon": "media-document",
+  "keywords": ["documentos", "archivos", "pdf", "mides"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align":             { "type": "string", "default": "full" },
+    "titulo":            { "type": "string", "default": "Documentos" },
+    "subtitulo":         { "type": "string", "default": "Publicaciones y documentos oficiales del MIDES" },
+    "maxDocumentos":     { "type": "number", "default": 100 },
+    "porPagina":         { "type": "number", "default": 9 },
+    "mostrarBuscador":   { "type": "boolean","default": true },
+    "mostrarFiltros":    { "type": "boolean","default": true },
+    "categorias":        { "type": "array",  "default": [], "items": { "type": "number" } }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

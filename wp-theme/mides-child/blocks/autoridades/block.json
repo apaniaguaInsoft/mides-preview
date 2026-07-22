@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/autoridades",
+  "title": "Autoridades",
+  "description": "Equipo directivo con foto, cargo, nombre y hoja de vida.",
+  "category": "layout",
+  "icon": "groups",
+  "supports": { "html": false, "align": ["full"], "spacing": false },
+  "attributes": {
+    "align":  { "type": "string", "default": "full" },
+    "titulo": { "type": "string", "default": "Autoridades" },
+    "autoridades": {
+      "type": "array",
+      "default": [
+        { "cargo": "Ministro",     "nombre": "Abelardo Pinto",      "puesto": "Ministerio de Desarrollo Social",    "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" },
+        { "cargo": "Viceministra", "nombre": "María Morales",       "puesto": "Administrativa y Financiera",        "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" },
+        { "cargo": "Viceministra", "nombre": "Bertha Zapeta",       "puesto": "Protección Social",                  "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" },
+        { "cargo": "Viceministra", "nombre": "Claudia Valenzuela",  "puesto": "Política, Planificación y Evaluación","fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "cargo":   { "type": "string", "default": "" },
+          "nombre":  { "type": "string", "default": "" },
+          "puesto":  { "type": "string", "default": "" },
+          "fotoId":  { "type": "number", "default": 0 },
+          "fotoUrl": { "type": "string", "default": "" },
+          "fotoAlt": { "type": "string", "default": "" },
+          "cvUrl":   { "type": "string", "default": "#" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

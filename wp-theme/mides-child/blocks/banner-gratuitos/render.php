@@ -14,6 +14,8 @@ if ( ! empty( $image_id ) ) {
 	$image_url = wp_get_attachment_image_url( (int) $image_id, 'full' ) ?: $image_url;
 }
 ?>
+<section class="gratuitos-section">
+<div class="container">
 <div class="gratuitos-banner">
   <div class="gratuitos-banner__left">
     <div class="gratuitos-banner__text">
@@ -50,9 +52,11 @@ if ( ! empty( $image_id ) ) {
       </div>
     </div>
   </div>
+  <?php if ( $image_url ) : ?>
   <div class="gratuitos-banner__right">
-    <?php if ( $image_url ) : ?>
-      <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" class="gratuitos-banner__img" />
-    <?php endif; ?>
+    <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" class="gratuitos-banner__img" />
   </div>
+  <?php endif; ?>
 </div>
+</div>
+</section>

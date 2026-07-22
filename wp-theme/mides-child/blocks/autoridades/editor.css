@@ -1,0 +1,11 @@
+.mides-autoridades-editor { padding: 40px 24px; background: #fff; }
+.mides-autoridades-editor__title { font-size: 20px; font-weight: 700; color: #192854; margin: 0 0 20px; text-align: center; }
+.mides-autoridades-editor__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.mides-autoridades-editor__card { text-align: center; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 12px; }
+.mides-autoridades-editor__foto { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 8px; display: block; }
+.mides-autoridades-editor__placeholder { width: 80px; height: 80px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 8px; }
+.mides-autoridades-editor__cargo { font-size: 11px; color: #F2A119; font-weight: 700; display: block; }
+.mides-autoridades-editor__nombre { font-size: 13px; font-weight: 700; color: #192854; margin: 4px 0 2px; }
+.mides-autoridades-editor__puesto { font-size: 11px; color: #718096; }
+.mides-autoridades-panel { border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 10px; background: #f9fafb; }
+.mides-autoridades-panel__name { font-size: 11px; font-weight: 700; color: #192854; margin: 0 0 6px; }

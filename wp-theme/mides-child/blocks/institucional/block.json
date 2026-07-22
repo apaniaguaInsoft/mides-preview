@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/institucional",
+  "title": "Institucional",
+  "description": "Sección Institucional con flip-cards de Misión, Visión, Propósito, Valores y Autoridades.",
+  "category": "layout",
+  "icon": "building",
+  "keywords": ["institucional", "nosotros", "mision", "vision", "valores", "mides"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align":       { "type": "string", "default": "full" },
+    "titulo":      { "type": "string", "default": "Institucional" },
+    "intro":       { "type": "string", "default": "Somos el ente rector de los programas sociales en Guatemala, creado el 7 de febrero de 2012. Formulamos y coordinamos políticas públicas orientadas a mejorar el bienestar de la población en condición de vulnerabilidad, garantizando su acceso a servicios de salud, educación, alimentación y oportunidades de desarrollo integral." },
+    "cards": {
+      "type": "array",
+      "default": [
+        { "nombre": "Misión",    "descripcion": "Institución del Organismo Ejecutivo rectora de políticas públicas orientadas a mejorar el bienestar de personas vulnerables en pobreza, generando oportunidades y capacidades para mejorar sus vidas en forma positiva y duradera.", "iconId": 0, "iconUrl": "", "iconAlt": "Misión",    "link": "", "linkText": "" },
+        { "nombre": "Visión",    "descripcion": "Un modelo de desarrollo social incluyente que proteja a los más vulnerables y genere oportunidades para que cada guatemalteco alcance una vida digna.",                                                                             "iconId": 0, "iconUrl": "", "iconAlt": "Visión",    "link": "", "linkText": "" },
+        { "nombre": "Propósito", "descripcion": "Las personas vulnerables desarrollan sus capacidades con dignidad. La sociedad se moviliza para apoyarlas. El MIDES lidera con confianza, demuestra resultados e invierte en las familias más necesitadas.",                   "iconId": 0, "iconUrl": "", "iconAlt": "Propósito", "link": "", "linkText": "" },
+        { "nombre": "Valores",   "descripcion": "Transparencia, inclusión, corresponsabilidad y dignidad humana como pilares de nuestra acción institucional al servicio de los guatemaltecos.",                                                                                 "iconId": 0, "iconUrl": "", "iconAlt": "Valores",   "link": "", "linkText": "" },
+        { "nombre": "Autoridades", "descripcion": "Conoce al equipo directivo y autoridades del Ministerio de Desarrollo Social de Guatemala.",                                                                                                                                "iconId": 0, "iconUrl": "", "iconAlt": "Autoridades", "link": "/institucional/#autoridades", "linkText": "Ver autoridades" }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "nombre":      { "type": "string", "default": "" },
+          "descripcion": { "type": "string", "default": "" },
+          "iconId":      { "type": "number", "default": 0 },
+          "iconUrl":     { "type": "string", "default": "" },
+          "iconAlt":     { "type": "string", "default": "" },
+          "link":        { "type": "string", "default": "" },
+          "linkText":    { "type": "string", "default": "" }
+        }
+      }
+    },
+    "columnas4":   { "type": "boolean", "default": false },
+    "urlVerMas":   { "type": "string", "default": "" },
+    "textoVerMas": { "type": "string", "default": "Conocer más sobre nosotros" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

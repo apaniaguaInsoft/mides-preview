@@ -1,0 +1,11 @@
+.mides-mesas-editor { background: #192854; padding: 40px 24px; }
+.mides-mesas-editor__header { text-align: center; margin-bottom: 24px; }
+.mides-mesas-editor__title { font-size: 22px; font-weight: 700; color: #F2A119; margin: 0 0 8px; }
+.mides-mesas-editor__intro { font-size: 12px; color: rgba(255,255,255,0.7); margin: 0; }
+.mides-mesas-editor__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.mides-mesas-editor__card { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 14px; }
+.mides-mesas-editor__num { font-size: 20px; font-weight: 900; color: rgba(255,255,255,0.15); margin-bottom: 4px; }
+.mides-mesas-editor__card-title { font-size: 12px; font-weight: 700; color: #fff; margin: 0; }
+.mides-mesas-editor__rectora { font-size: 11px; color: #F2A119; margin: 2px 0 0; }
+.mides-mesas-panel { border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px; background: #f9fafb; }
+.mides-mesas-panel__num { font-size: 11px; font-weight: 700; color: #192854; margin: 0 0 6px; }

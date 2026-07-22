@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/mesas-tecnicas",
+  "title": "Mesas Técnicas GEDS",
+  "description": "Gabinete Específico de Desarrollo Social — mesas técnicas numeradas.",
+  "category": "layout",
+  "icon": "networking",
+  "supports": { "html": false, "align": ["full"], "spacing": false },
+  "attributes": {
+    "align":              { "type": "string", "default": "full" },
+    "titulo":             { "type": "string", "default": "GEDS" },
+    "intro":              { "type": "string", "default": "El MIDES coordina y participa en las Mesas Técnicas del Gabinete Específico de Desarrollo Social —GEDS—, espacios interinstitucionales que articulan la política pública en torno a los grupos poblacionales más vulnerables de Guatemala." },
+    "urlOrdinarias":      { "type": "string", "default": "" },
+    "urlExtraordinarias": { "type": "string", "default": "" },
+    "mesas": {
+      "type": "array",
+      "default": [
+        { "num": "01", "titulo": "Primera Infancia Guatemala",                        "rectora": "MIDES",  "descripcion": "Articula acciones interinstitucionales para garantizar el desarrollo integral de niñas y niños desde la gestación hasta los 6 años, priorizando salud, nutrición, educación inicial y protección." },
+        { "num": "02", "titulo": "Juventud",                                          "rectora": "MIDES",  "descripcion": "Coordina políticas y programas dirigidos a jóvenes guatemaltecos, fomentando su participación, formación, empleo y prevención de violencia en coordinación con CONAJUVE y demás entidades." },
+        { "num": "03", "titulo": "Personas Mayores",                                  "rectora": "MINTRAB","descripcion": "Impulsa políticas de protección, atención y dignificación de las personas adultas mayores, promoviendo su inclusión social, económica y cultural mediante la articulación con MIDES y el DEMI." },
+        { "num": "04", "titulo": "Mujeres",                                           "rectora": "SEPREM", "descripcion": "Promueve la igualdad de género y el empoderamiento de las mujeres guatemaltecas, coordinando acciones en materia de educación, salud, empleo, violencia y participación ciudadana." },
+        { "num": "05", "titulo": "Personas con Discapacidad",                         "rectora": "CONADI", "descripcion": "Coordina la implementación de políticas inclusivas para personas con discapacidad, garantizando acceso a educación, salud, empleo y espacios públicos accesibles en todo el territorio nacional." },
+        { "num": "06", "titulo": "Pueblos Indígenas",                                 "rectora": "MINTRAB","descripcion": "Articula la política pública con enfoque intercultural para los pueblos Maya, Xinka y Garífuna, respetando sus derechos colectivos y promoviendo su desarrollo con identidad cultural." },
+        { "num": "07", "titulo": "Prevención de Violencia Sexual, Explotación y Trata de Personas", "rectora": "SVET",   "descripcion": "Coordina la respuesta interinstitucional frente a la violencia sexual, la explotación y la trata de personas, con énfasis en la atención a víctimas y la prevención en comunidades vulnerables." },
+        { "num": "08", "titulo": "Migración y Desplazamiento",                        "rectora": "AMIPAS","descripcion": "Atiende las necesidades de las personas migrantes y desplazadas, articulando acciones de protección, reintegración y asistencia humanitaria con entidades nacionales e internacionales." },
+        { "num": "09", "titulo": "Prevención de Femicidios y Atención a Víctimas",   "rectora": "HISPAS","descripcion": "Coordina acciones para la prevención del femicidio y la atención integral a víctimas de violencia contra la mujer, articulando respuestas desde la justicia, salud, educación y asistencia social." }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "num":         { "type": "string", "default": "" },
+          "titulo":      { "type": "string", "default": "" },
+          "rectora":     { "type": "string", "default": "" },
+          "descripcion": { "type": "string", "default": "" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

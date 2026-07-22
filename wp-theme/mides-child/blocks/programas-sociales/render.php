@@ -22,6 +22,31 @@ $linea_svg        = get_stylesheet_directory_uri() . '/img/Linea-Resaltadora.svg
       </h2>
     </div>
 
+    <?php
+    /* Construir JSON de datos para los modales */
+    $modal_data = [];
+    foreach ( $programs as $prog ) {
+      $key = $prog['modal'] ?? '';
+      if ( ! $key ) continue;
+      $icon_url_modal = '';
+      if ( ! empty( $prog['iconId'] ) ) {
+        $icon_url_modal = wp_get_attachment_image_url( (int) $prog['iconId'], 'full' ) ?: ( $prog['iconUrl'] ?? '' );
+      } else {
+        $icon_url_modal = $prog['iconUrl'] ?? '';
+      }
+      $modal_data[ $key ] = [
+        'label'    => $prog['label']    ?? 'Programa',
+        'title'    => ( $prog['name'] ?? '' ) . ( ! empty( $prog['nameBold'] ) ? ' ' . $prog['nameBold'] : '' ),
+        'icon'     => $icon_url_modal,
+        'desc'     => $prog['desc']     ?? '',
+        'page'     => $prog['page']     ?? '',
+        'chips'    => $prog['chips']    ?? [],
+        'sections' => $prog['sections'] ?? [],
+      ];
+    }
+    ?>
+    <script id="programa-data" type="application/json"><?php echo wp_json_encode( $modal_data ); ?></script>
+
     <div class="programas__grid">
       <?php foreach ( $programs as $prog ) :
         $icon_url = '';
@@ -54,3 +79,17 @@ $linea_svg        = get_stylesheet_directory_uri() . '/img/Linea-Resaltadora.svg
 
   </div>
 </section>
+
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal">
+    <button class="modal__close" id="modal-close" aria-label="Cerrar">&#10005;</button>
+    <div class="modal__header">
+      <div class="modal__icon" id="modal-icon"></div>
+      <div>
+        <p class="modal__label" id="modal-label"></p>
+        <h2 class="modal__title" id="modal-title"></h2>
+      </div>
+    </div>
+    <div class="modal__body" id="modal-body"></div>
+  </div>
+</div>

@@ -28,7 +28,11 @@
           "label":     { "type": "string", "default": "Programa" },
           "name":      { "type": "string", "default": "" },
           "nameBold":  { "type": "string", "default": "" },
-          "modal":     { "type": "string", "default": "" }
+          "modal":     { "type": "string", "default": "" },
+          "desc":      { "type": "string", "default": "" },
+          "page":      { "type": "string", "default": "" },
+          "chips":     { "type": "array",  "default": [], "items": { "type": "string" } },
+          "sections":  { "type": "array",  "default": [], "items": { "type": "object" } }
         }
       }
     }

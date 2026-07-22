@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/hero-interior",
+  "title": "Hero Interior",
+  "description": "Hero para páginas internas (Institucional, Noticias, Contacto, etc.).",
+  "category": "layout",
+  "icon": "cover-image",
+  "supports": { "html": false, "align": ["full"], "spacing": false },
+  "attributes": {
+    "align":    { "type": "string", "default": "full" },
+    "titulo":   { "type": "string", "default": "TÍTULO" },
+    "subtitulo":{ "type": "string", "default": "" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}
