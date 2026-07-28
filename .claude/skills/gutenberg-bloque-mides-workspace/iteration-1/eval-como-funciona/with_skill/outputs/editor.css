@@ -1,0 +1,51 @@
+/* Cómo Funciona — estilos específicos del editor
+   Los patrones comunes (preview wrapper, panel-item, etc.)
+   vienen de editor-shared.css — no duplicar aquí. */
+
+/* Grid de pasos en el canvas del editor */
+.mides-como-funciona-editor__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Card de cada paso */
+.mides-como-funciona-editor__paso {
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 20px 16px;
+  background: #fff;
+  position: relative;
+}
+
+/* Número del paso — círculo azul con número naranja */
+.mides-como-funciona-editor__numero {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #192854;
+  color: #F2A119;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* Título del paso */
+.mides-como-funciona-editor__paso-titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: #192854;
+  margin: 0 0 6px;
+}
+
+/* Descripción del paso */
+.mides-como-funciona-editor__paso-desc {
+  font-size: 12px;
+  color: #718096;
+  margin: 0 !important;
+  line-height: 1.5;
+}

@@ -1,0 +1,43 @@
+{
+  "eval_id": 1,
+  "eval_name": "crear-bloque-estadisticas",
+  "prompt": "Necesito un bloque nuevo para mostrar estadísticas del ministerio en la página de inicio. Cada estadística tiene: un número grande, una etiqueta y un ícono SVG subible desde la librería de medios. La sección tiene fondo azul oscuro de MIDES y se puede editar el título de la sección. Pueden haber entre 3 y 6 estadísticas.",
+  "assertions": [
+    {
+      "text": "block.js usa .mides-editor-preview--dark (o la clase .mides-editor-preview con --dark) para el wrapper del preview en el editor",
+      "type": "content_check"
+    },
+    {
+      "text": "block.js usa .mides-panel-item para los contenedores de ítems en el InspectorControls",
+      "type": "content_check"
+    },
+    {
+      "text": "block.js usa .mides-panel-item__label para los labels de cada ítem en el inspector",
+      "type": "content_check"
+    },
+    {
+      "text": "block.js usa .mides-editor-media-label (o la clase compartida) para el label del campo ícono/imagen, en lugar de inline style",
+      "type": "content_check"
+    },
+    {
+      "text": "editor.css NO contiene estilos de panel item propios (.mides-estadisticas-panel o similares) que dupliquen .mides-panel-item",
+      "type": "absence_check"
+    },
+    {
+      "text": "block.json incluye editorScript y editorStyle",
+      "type": "content_check"
+    },
+    {
+      "text": "render.php usa esc_html() o esc_attr() para sanitizar los atributos de texto",
+      "type": "content_check"
+    },
+    {
+      "text": "save() retorna null en block.js",
+      "type": "content_check"
+    },
+    {
+      "text": "El preview en el editor muestra los ítems de estadística (número + etiqueta) en una estructura de grilla, no solo texto plano",
+      "type": "visual_check"
+    }
+  ]
+}

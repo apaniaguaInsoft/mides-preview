@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/programa-detail",
+  "title": "Detalle de Programa Social",
+  "description": "Página completa de un programa social: hero con ícono, contenido principal y sidebar.",
+  "category": "layout",
+  "icon": "heart",
+  "keywords": ["programa", "social", "bono", "bolsa", "beca", "detalle", "mides"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align":        { "type": "string",  "default": "full" },
+    "heroIconId":   { "type": "number",  "default": 0 },
+    "heroIconUrl":  { "type": "string",  "default": "" },
+    "heroIconAlt":  { "type": "string",  "default": "" },
+    "eyebrow":      { "type": "string",  "default": "Programa" },
+    "titulo":       { "type": "string",  "default": "" },
+    "imgId":        { "type": "number",  "default": 0 },
+    "imgUrl":       { "type": "string",  "default": "" },
+    "imgAlt":       { "type": "string",  "default": "" },
+    "secciones": {
+      "type": "array",
+      "default": [
+        { "titulo": "Acerca del Programa",    "tipo": "texto",      "contenido": "" },
+        { "titulo": "Objetivo General",       "tipo": "texto",      "contenido": "" },
+        { "titulo": "Objetivos Específicos",  "tipo": "lista",      "contenido": "" },
+        { "titulo": "Lugares de Intervención","tipo": "texto",      "contenido": "" }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "titulo":    { "type": "string", "default": "" },
+          "tipo":      { "type": "string", "default": "texto" },
+          "contenido": { "type": "string", "default": "" }
+        }
+      }
+    },
+    "showMonto":    { "type": "boolean", "default": true },
+    "montoFree":    { "type": "boolean", "default": false },
+    "montoLabel":   { "type": "string",  "default": "Transferencia periódica" },
+    "montoAmount":  { "type": "string",  "default": "" },
+    "montoSub":     { "type": "string",  "default": "Por familia beneficiaria" },
+    "chipsLabel":   { "type": "string",  "default": "Intervenciones" },
+    "chips":        { "type": "string",  "default": "" },
+    "sidebarCards": {
+      "type": "array",
+      "default": [
+        { "titulo": "Criterios de Inclusión", "items": "" },
+        { "titulo": "Corresponsabilidades",   "items": "" }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "titulo": { "type": "string", "default": "" },
+          "items":  { "type": "string", "default": "" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

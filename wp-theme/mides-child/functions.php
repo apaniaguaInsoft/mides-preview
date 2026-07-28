@@ -184,6 +184,53 @@ add_action( 'init', function () {
 		get_stylesheet_directory() . '/blocks/documentos-lista',
 		[ 'render_callback' => 'mides_render_documentos_lista' ]
 	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/infopub-lista-categoria',
+		[ 'render_callback' => 'mides_render_infopub_lista_categoria' ]
+	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/infopub-card-link',
+		[ 'render_callback' => 'mides_render_infopub_card_link' ]
+	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/infopub-tabs',
+		[ 'render_callback' => 'mides_render_infopub_tabs' ]
+	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/infopub-tab-panel',
+		[ 'render_callback' => 'mides_render_infopub_tab_panel' ]
+	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/contacto-info',
+		[ 'render_callback' => 'mides_render_contacto_info' ]
+	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/contacto-mapa-form',
+		[ 'render_callback' => 'mides_render_contacto_mapa_form' ]
+	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/tramites-grid',
+		[ 'render_callback' => 'mides_render_tramites_grid' ]
+	);
+	register_block_type(
+		get_stylesheet_directory() . '/blocks/programa-detail',
+		[ 'render_callback' => 'mides_render_programa_detail' ]
+	);
+} );
+
+/* Estilos compartidos del editor + URL del tema para fallback de íconos */
+add_action( 'enqueue_block_editor_assets', function () {
+	wp_enqueue_style(
+		'mides-editor-shared',
+		get_stylesheet_directory_uri() . '/blocks/editor-shared.css',
+		[],
+		filemtime( get_stylesheet_directory() . '/blocks/editor-shared.css' )
+	);
+	wp_add_inline_script(
+		'wp-blocks',
+		'window.MIDES_THEME_URL = ' . wp_json_encode( get_stylesheet_directory_uri() ) . ';',
+		'before'
+	);
 } );
 
 function mides_render_hero_carousel( array $attributes ): string {
@@ -261,6 +308,42 @@ function mides_render_documentos_lista( array $attributes ): string {
 	return ob_get_clean();
 }
 
+function mides_render_infopub_lista_categoria( array $attributes ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/infopub-lista-categoria/render.php';
+	return ob_get_clean();
+}
+
+function mides_render_infopub_card_link( array $attributes ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/infopub-card-link/render.php';
+	return ob_get_clean();
+}
+
+function mides_render_infopub_tabs( array $attributes, string $content, WP_Block $block ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/infopub-tabs/render.php';
+	return ob_get_clean();
+}
+
+function mides_render_infopub_tab_panel( array $attributes, string $content ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/infopub-tab-panel/render.php';
+	return ob_get_clean();
+}
+
+function mides_render_contacto_info( array $attributes ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/contacto-info/render.php';
+	return ob_get_clean();
+}
+
+function mides_render_contacto_mapa_form( array $attributes ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/contacto-mapa-form/render.php';
+	return ob_get_clean();
+}
+
 function mides_render_noticias_recientes( array $attributes ): string {
 	wp_enqueue_script(
 		'mides-noticias-carousel',
@@ -271,6 +354,18 @@ function mides_render_noticias_recientes( array $attributes ): string {
 	);
 	ob_start();
 	include get_stylesheet_directory() . '/blocks/noticias-recientes/render.php';
+	return ob_get_clean();
+}
+
+function mides_render_tramites_grid( array $attributes ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/tramites-grid/render.php';
+	return ob_get_clean();
+}
+
+function mides_render_programa_detail( array $attributes ): string {
+	ob_start();
+	include get_stylesheet_directory() . '/blocks/programa-detail/render.php';
 	return ob_get_clean();
 }
 

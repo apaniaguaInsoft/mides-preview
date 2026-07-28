@@ -1,0 +1,50 @@
+{
+  "expectations": [
+    {
+      "text": "block.js usa mides-panel-item (no mides-autoridades-panel)",
+      "passed": true,
+      "evidence": "mides-panel-item present; mides-autoridades-panel absent"
+    },
+    {
+      "text": "block.js usa mides-panel-item__label (no mides-autoridades-panel__name)",
+      "passed": true,
+      "evidence": "mides-panel-item__label present; __name absent"
+    },
+    {
+      "text": "block.js usa mides-editor-preview en el wrapper del canvas",
+      "passed": true,
+      "evidence": "grep mides-editor-preview in block.js"
+    },
+    {
+      "text": "editor.css no contiene .mides-autoridades-panel",
+      "passed": true,
+      "evidence": "mides-autoridades-panel absent from editor.css"
+    },
+    {
+      "text": "editor.css no contiene .mides-autoridades-panel__name",
+      "passed": true,
+      "evidence": "mides-autoridades-panel__name absent from editor.css"
+    },
+    {
+      "text": "Funcionalidad conservada: campos cargo, nombre, puesto en block.js",
+      "passed": true,
+      "evidence": "cargo, nombre, puesto all present in block.js"
+    },
+    {
+      "text": "save() retorna null",
+      "passed": true,
+      "evidence": "grep return null in block.js"
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "total_tokens": 23805,
+    "duration_ms": 104657,
+    "total_duration_seconds": 104.7
+  }
+}

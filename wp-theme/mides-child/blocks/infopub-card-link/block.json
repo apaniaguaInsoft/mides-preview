@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/infopub-card-link",
+  "title": "Info Pública — Card con Link",
+  "description": "Card individual de información pública. Puede enlazar a un documento del CPT o a una URL manual.",
+  "category": "layout",
+  "icon": "media-document",
+  "keywords": ["infopub", "card", "documento", "link", "mides"],
+  "supports": { "html": false },
+  "attributes": {
+    "modoDocumento": { "type": "boolean", "default": false },
+    "documentoId":   { "type": "number",  "default": 0 },
+    "urlManual":     { "type": "string",  "default": "" },
+    "tag":           { "type": "string",  "default": "Documento" },
+    "titulo":        { "type": "string",  "default": "" },
+    "descripcion":   { "type": "string",  "default": "" },
+    "textoBoton":    { "type": "string",  "default": "Ver documento" },
+    "colorIcono":    { "type": "string",  "default": "default" },
+    "icono":         { "type": "string",  "default": "document" },
+    "tipoBoton":     { "type": "string",  "default": "download" }
+  },
+  "editorScript": "file:./block.js"
+}

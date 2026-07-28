@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "skill_name": "gutenberg-bloque-mides",
+    "skill_path": "/Users/apaniagua/Proyectos/mides-site/.claude/skills/gutenberg-bloque-mides",
+    "executor_model": "claude-sonnet-4-6",
+    "timestamp": "2026-07-24T23:26:36.634660Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "estadísticas block creation",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 9,
+        "failed": 0,
+        "total": 9,
+        "time_seconds": 121.4,
+        "tokens": 28956,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "block.js usa mides-editor-preview--dark para sección de fondo azul",
+          "passed": true,
+          "evidence": "grep mides-editor-preview--dark in block.js"
+        },
+        {
+          "text": "block.js usa mides-panel-item para contenedores de ítems del inspector",
+          "passed": true,
+          "evidence": "grep mides-panel-item"
+        },
+        {
+          "text": "block.js usa mides-panel-item__label para labels de ítems",
+          "passed": true,
+          "evidence": "grep mides-panel-item__label"
+        },
+        {
+          "text": "block.js usa mides-editor-media-label para label de ícono",
+          "passed": true,
+          "evidence": "grep mides-editor-media-label"
+        },
+        {
+          "text": "block.js usa mides-editor-img-placeholder (no avatar) para placeholder de ícono rectangular",
+          "passed": true,
+          "evidence": "img-placeholder for icon (not avatar-placeholder which is for circular photos)"
+        },
+        {
+          "text": "editor.css no duplica clase title (usa mides-editor-preview__title compartida)",
+          "passed": true,
+          "evidence": "grep absence of mides-estadisticas-editor__title in editor.css"
+        },
+        {
+          "text": "block.json incluye editorScript y editorStyle",
+          "passed": true,
+          "evidence": "both editorScript and editorStyle present in block.json"
+        },
+        {
+          "text": "render.php sanitiza con esc_html()",
+          "passed": true,
+          "evidence": "grep esc_html in render.php"
+        },
+        {
+          "text": "save() retorna null",
+          "passed": true,
+          "evidence": "grep return null in block.js"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "estadísticas block creation",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.78,
+        "passed": 7,
+        "failed": 2,
+        "total": 9,
+        "time_seconds": 121.7,
+        "tokens": 29858,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "block.js usa mides-editor-preview--dark para sección de fondo azul",
+          "passed": true,
+          "evidence": "grep mides-editor-preview--dark in block.js"
+        },
+        {
+          "text": "block.js usa mides-panel-item para contenedores de ítems del inspector",
+          "passed": true,
+          "evidence": "grep mides-panel-item"
+        },
+        {
+          "text": "block.js usa mides-panel-item__label para labels de ítems",
+          "passed": true,
+          "evidence": "grep mides-panel-item__label"
+        },
+        {
+          "text": "block.js usa mides-editor-media-label para label de ícono",
+          "passed": true,
+          "evidence": "grep mides-editor-media-label"
+        },
+        {
+          "text": "block.js usa mides-editor-img-placeholder (no avatar) para placeholder de ícono rectangular",
+          "passed": false,
+          "evidence": "img-placeholder for icon (not avatar-placeholder which is for circular photos)"
+        },
+        {
+          "text": "editor.css no duplica clase title (usa mides-editor-preview__title compartida)",
+          "passed": false,
+          "evidence": "grep absence of mides-estadisticas-editor__title in editor.css"
+        },
+        {
+          "text": "block.json incluye editorScript y editorStyle",
+          "passed": true,
+          "evidence": "both editorScript and editorStyle present in block.json"
+        },
+        {
+          "text": "render.php sanitiza con esc_html()",
+          "passed": true,
+          "evidence": "grep esc_html in render.php"
+        },
+        {
+          "text": "save() retorna null",
+          "passed": true,
+          "evidence": "grep return null in block.js"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "autoridades refactor to shared classes",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 93.0,
+        "tokens": 22708,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "block.js usa mides-panel-item (no mides-autoridades-panel)",
+          "passed": true,
+          "evidence": "mides-panel-item present; mides-autoridades-panel absent"
+        },
+        {
+          "text": "block.js usa mides-panel-item__label (no mides-autoridades-panel__name)",
+          "passed": true,
+          "evidence": "mides-panel-item__label present; __name absent"
+        },
+        {
+          "text": "block.js usa mides-editor-preview en el wrapper del canvas",
+          "passed": true,
+          "evidence": "grep mides-editor-preview in block.js"
+        },
+        {
+          "text": "editor.css no contiene .mides-autoridades-panel",
+          "passed": true,
+          "evidence": "mides-autoridades-panel absent from editor.css"
+        },
+        {
+          "text": "editor.css no contiene .mides-autoridades-panel__name",
+          "passed": true,
+          "evidence": "mides-autoridades-panel__name absent from editor.css"
+        },
+        {
+          "text": "Funcionalidad conservada: campos cargo, nombre, puesto en block.js",
+          "passed": true,
+          "evidence": "cargo, nombre, puesto all present in block.js"
+        },
+        {
+          "text": "save() retorna null",
+          "passed": true,
+          "evidence": "grep return null in block.js"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "autoridades refactor to shared classes",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 104.7,
+        "tokens": 23805,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "block.js usa mides-panel-item (no mides-autoridades-panel)",
+          "passed": true,
+          "evidence": "mides-panel-item present; mides-autoridades-panel absent"
+        },
+        {
+          "text": "block.js usa mides-panel-item__label (no mides-autoridades-panel__name)",
+          "passed": true,
+          "evidence": "mides-panel-item__label present; __name absent"
+        },
+        {
+          "text": "block.js usa mides-editor-preview en el wrapper del canvas",
+          "passed": true,
+          "evidence": "grep mides-editor-preview in block.js"
+        },
+        {
+          "text": "editor.css no contiene .mides-autoridades-panel",
+          "passed": true,
+          "evidence": "mides-autoridades-panel absent from editor.css"
+        },
+        {
+          "text": "editor.css no contiene .mides-autoridades-panel__name",
+          "passed": true,
+          "evidence": "mides-autoridades-panel__name absent from editor.css"
+        },
+        {
+          "text": "Funcionalidad conservada: campos cargo, nombre, puesto en block.js",
+          "passed": true,
+          "evidence": "cargo, nombre, puesto all present in block.js"
+        },
+        {
+          "text": "save() retorna null",
+          "passed": true,
+          "evidence": "grep return null in block.js"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "cómo funciona block creation",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 97.2,
+        "tokens": 26823,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "block.js usa mides-editor-preview sin --dark (fondo blanco)",
+          "passed": true,
+          "evidence": "preview present, --dark absent"
+        },
+        {
+          "text": "block.js usa mides-panel-item para contenedores de pasos",
+          "passed": true,
+          "evidence": "grep mides-panel-item"
+        },
+        {
+          "text": "block.js usa mides-panel-item__label",
+          "passed": true,
+          "evidence": "grep mides-panel-item__label"
+        },
+        {
+          "text": "editor.css no define clases de panel item propias",
+          "passed": true,
+          "evidence": "no panel-item duplicates in editor.css"
+        },
+        {
+          "text": "Preview muestra numeración de pasos en el canvas del editor",
+          "passed": true,
+          "evidence": "numero/paso rendered in canvas preview"
+        },
+        {
+          "text": "block.json incluye editorScript y editorStyle",
+          "passed": true,
+          "evidence": "both present in block.json"
+        },
+        {
+          "text": "render.php sanitiza con esc_html()",
+          "passed": true,
+          "evidence": "grep esc_html in render.php"
+        },
+        {
+          "text": "save() retorna null",
+          "passed": true,
+          "evidence": "grep return null in block.js"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "cómo funciona block creation",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 8,
+        "failed": 0,
+        "total": 8,
+        "time_seconds": 97.3,
+        "tokens": 29991,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "block.js usa mides-editor-preview sin --dark (fondo blanco)",
+          "passed": true,
+          "evidence": "preview present, --dark absent"
+        },
+        {
+          "text": "block.js usa mides-panel-item para contenedores de pasos",
+          "passed": true,
+          "evidence": "grep mides-panel-item"
+        },
+        {
+          "text": "block.js usa mides-panel-item__label",
+          "passed": true,
+          "evidence": "grep mides-panel-item__label"
+        },
+        {
+          "text": "editor.css no define clases de panel item propias",
+          "passed": true,
+          "evidence": "no panel-item duplicates in editor.css"
+        },
+        {
+          "text": "Preview muestra numeración de pasos en el canvas del editor",
+          "passed": true,
+          "evidence": "numero/paso rendered in canvas preview"
+        },
+        {
+          "text": "block.json incluye editorScript y editorStyle",
+          "passed": true,
+          "evidence": "both present in block.json"
+        },
+        {
+          "text": "render.php sanitiza con esc_html()",
+          "passed": true,
+          "evidence": "grep esc_html in render.php"
+        },
+        {
+          "text": "save() retorna null",
+          "passed": true,
+          "evidence": "grep return null in block.js"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 103.87,
+        "stddev": 15.33,
+        "min": 93.0,
+        "max": 121.4
+      },
+      "tokens": {
+        "mean": 26162.33,
+        "stddev": 3175.96,
+        "min": 22708,
+        "max": 28956
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.93,
+        "stddev": 0.13,
+        "min": 0.78,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 107.9,
+        "stddev": 12.51,
+        "min": 97.3,
+        "max": 121.7
+      },
+      "tokens": {
+        "mean": 27884.67,
+        "stddev": 3533.72,
+        "min": 23805,
+        "max": 29991
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.07",
+      "time_seconds": "-4.0s",
+      "tokens": "-1722"
+    }
+  },
+  "notes": [
+    "Eval 2 (autoridades refactor) pasa al 100% en ambas configuraciones — el agente sin skill también descubre las clases compartidas leyendo editor-shared.css",
+    "Eval 3 (cómo funciona) también pasa al 100% en ambas — la skill no aporta ventaja cuantitativa cuando el agente explora el codebase",
+    "La única diferencia significativa aparece en Eval 1 (estadísticas): sin skill el agente usa .mides-editor-avatar-placeholder para íconos en lugar de .mides-editor-img-placeholder — error sutil de semántica",
+    "Conclusión: el valor principal de la skill es consistencia y velocidad (no requiere explorar el codebase) y criterios explícitos de decisión (cuándo usar --dark, cuándo usar img vs avatar placeholder)"
+  ]
+}

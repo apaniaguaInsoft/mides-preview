@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/estadisticas-ministerio",
+  "title": "Estadísticas del Ministerio",
+  "description": "Sección con fondo azul MIDES que muestra estadísticas clave (número, etiqueta e ícono SVG).",
+  "category": "layout",
+  "icon": "chart-bar",
+  "supports": { "html": false, "align": ["full"], "spacing": false },
+  "attributes": {
+    "align":  { "type": "string", "default": "full" },
+    "titulo": { "type": "string", "default": "Nuestro Impacto" },
+    "estadisticas": {
+      "type": "array",
+      "default": [
+        { "numero": "2.5M", "etiqueta": "Beneficiarios atendidos",  "iconoId": 0, "iconoUrl": "", "iconoAlt": "" },
+        { "numero": "150+", "etiqueta": "Programas sociales activos","iconoId": 0, "iconoUrl": "", "iconoAlt": "" },
+        { "numero": "22",   "etiqueta": "Departamentos cubiertos",   "iconoId": 0, "iconoUrl": "", "iconoAlt": "" }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "numero":   { "type": "string", "default": "" },
+          "etiqueta": { "type": "string", "default": "" },
+          "iconoId":  { "type": "number", "default": 0 },
+          "iconoUrl": { "type": "string", "default": "" },
+          "iconoAlt": { "type": "string", "default": "" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

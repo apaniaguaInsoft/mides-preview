@@ -19,7 +19,15 @@
     "imageAlt":      { "type": "string", "default": "Beneficiaria recibiendo apoyo" },
     "pillar1":       { "type": "string", "default": "Seguros y confiables" },
     "pillar2":       { "type": "string", "default": "Para todas las familias" },
-    "pillar3":       { "type": "string", "default": "Comprometidos contigo" }
+    "pillar3":       { "type": "string", "default": "Comprometidos contigo" },
+    "textTop":       { "type": "string", "default": "TODOS NUESTROS" },
+    "textPrograms":  { "type": "string", "default": "PROGRAMAS SOCIALES" },
+    "textSon":       { "type": "string", "default": "SON" },
+    "textFree":      { "type": "string", "default": "GRATUITOS" },
+    "textNote":      { "type": "string", "default": "No debes pagar por" },
+    "textNoteBold":  { "type": "string", "default": "NADA" },
+    "textBtn":       { "type": "string", "default": "DENUNCIA AQUÍ" },
+    "textBtnSub":    { "type": "string", "default": "CUALQUIER IRREGULARIDAD" }
   },
   "editorScript": "file:./block.js",
   "editorStyle":  "file:./editor.css"

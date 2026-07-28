@@ -1,0 +1,25 @@
+/* ── Autoridades — editor.css ────────────────────────────────────────────
+   Solo contiene estilos ESPECÍFICOS de este bloque.
+   Los estilos de .mides-panel-item, .mides-panel-item__label,
+   .mides-editor-media-label, .mides-editor-preview y
+   .mides-editor-avatar-placeholder provienen de editor-shared.css.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* Tamaño del avatar placeholder (requerido por el bloque — shared solo da la forma) */
+.mides-autoridades-editor__avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 8px;
+}
+
+/* Grilla y card del preview */
+.mides-autoridades-editor__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.mides-autoridades-editor__card { text-align: center; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px 12px; }
+
+/* Foto real dentro del preview */
+.mides-autoridades-editor__foto { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 8px; display: block; }
+
+/* Tipografía de cards del preview */
+.mides-autoridades-editor__cargo  { font-size: 11px; color: #F2A119; font-weight: 700; display: block; }
+.mides-autoridades-editor__nombre { font-size: 13px; font-weight: 700; color: #192854; margin: 4px 0 2px; }
+.mides-autoridades-editor__puesto { font-size: 11px; color: #718096; }

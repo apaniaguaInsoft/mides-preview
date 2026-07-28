@@ -21,6 +21,13 @@
             el(TextControl,{label:'URL Reuniones Ordinarias',value:a.urlOrdinarias,onChange:function(v){s({urlOrdinarias:v});}}),
             el(TextControl,{label:'URL Reuniones Extraordinarias',value:a.urlExtraordinarias,onChange:function(v){s({urlExtraordinarias:v});}})
           ),
+          el(PanelBody,{title:'Etiquetas',initialOpen:false},
+            el(TextControl,{label:'Prefijo entidad rectora',value:a.labelRectora,onChange:function(v){s({labelRectora:v});}}),
+            el(TextControl,{label:'Botón ordinarias — título',value:a.labelOrdinarias,onChange:function(v){s({labelOrdinarias:v});}}),
+            el(TextControl,{label:'Botón ordinarias — subtexto',value:a.textoOrdinarias,onChange:function(v){s({textoOrdinarias:v});}}),
+            el(TextControl,{label:'Botón extraordinarias — título',value:a.labelExtraordinarias,onChange:function(v){s({labelExtraordinarias:v});}}),
+            el(TextControl,{label:'Botón extraordinarias — subtexto',value:a.textoExtraordinarias,onChange:function(v){s({textoExtraordinarias:v});}})
+          ),
           el(PanelBody,{title:'Mesas Técnicas',initialOpen:false},
             mesas.map(function(m,i){
               return el('div',{key:i,className:'mides-mesas-panel'},

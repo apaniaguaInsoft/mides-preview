@@ -8,7 +8,15 @@ $image_alt = $attributes['imageAlt'] ?? 'Beneficiaria recibiendo apoyo';
 $pillar1   = $attributes['pillar1']  ?? 'Seguros y confiables';
 $pillar2   = $attributes['pillar2']  ?? 'Para todas las familias';
 $pillar3   = $attributes['pillar3']  ?? 'Comprometidos contigo';
-$url_denuncia = get_theme_mod( 'url_denuncia', '#' );
+$url_denuncia  = get_theme_mod( 'url_denuncia', '#' );
+$text_top      = $attributes['textTop']      ?? 'TODOS NUESTROS';
+$text_programs = $attributes['textPrograms'] ?? 'PROGRAMAS SOCIALES';
+$text_son      = $attributes['textSon']      ?? 'SON';
+$text_free     = $attributes['textFree']     ?? 'GRATUITOS';
+$text_note     = $attributes['textNote']     ?? 'No debes pagar por';
+$text_note_bold = $attributes['textNoteBold'] ?? 'NADA';
+$text_btn      = $attributes['textBtn']      ?? 'DENUNCIA AQUÍ';
+$text_btn_sub  = $attributes['textBtnSub']   ?? 'CUALQUIER IRREGULARIDAD';
 
 if ( ! empty( $image_id ) ) {
 	$image_url = wp_get_attachment_image_url( (int) $image_id, 'full' ) ?: $image_url;
@@ -19,16 +27,16 @@ if ( ! empty( $image_id ) ) {
 <div class="gratuitos-banner">
   <div class="gratuitos-banner__left">
     <div class="gratuitos-banner__text">
-      <p class="gratuitos-banner__top">TODOS NUESTROS</p>
-      <p class="gratuitos-banner__programs">PROGRAMAS SOCIALES</p>
+      <p class="gratuitos-banner__top"><?php echo esc_html( $text_top ); ?></p>
+      <p class="gratuitos-banner__programs"><?php echo esc_html( $text_programs ); ?></p>
       <div class="gratuitos-banner__son-wrap">
-        <span class="gratuitos-banner__son">SON</span>
+        <span class="gratuitos-banner__son"><?php echo esc_html( $text_son ); ?></span>
       </div>
-      <p class="gratuitos-banner__free">GRATUITOS</p>
-      <p class="gratuitos-banner__note">No debes pagar por <strong>NADA</strong></p>
+      <p class="gratuitos-banner__free"><?php echo esc_html( $text_free ); ?></p>
+      <p class="gratuitos-banner__note"><?php echo esc_html( $text_note ); ?> <strong><?php echo esc_html( $text_note_bold ); ?></strong></p>
       <a href="<?php echo esc_url( $url_denuncia ); ?>" class="gratuitos-banner__btn">
-        <strong>DENUNCIA AQUÍ</strong>
-        <span>CUALQUIER IRREGULARIDAD</span>
+        <strong><?php echo esc_html( $text_btn ); ?></strong>
+        <span><?php echo esc_html( $text_btn_sub ); ?></span>
       </a>
       <div class="gratuitos-banner__pillars">
         <div class="gratuitos-pillar">

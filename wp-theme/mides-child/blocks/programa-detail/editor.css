@@ -1,0 +1,120 @@
+.mides-programa-detail-editor {
+  background: #f7f8fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Hero preview */
+.mides-pd-editor__hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #192854;
+  padding: 28px 32px;
+}
+
+.mides-pd-editor__hero-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.mides-pd-editor__eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 4px !important;
+}
+
+.mides-pd-editor__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 !important;
+}
+
+/* Body 2-col */
+.mides-pd-editor__body {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 20px;
+  padding: 24px 32px;
+}
+
+.mides-pd-editor__main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mides-pd-editor__img {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.mides-pd-editor__block {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  background: #fff;
+}
+
+.mides-pd-editor__block-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #192854;
+  margin: 0 0 2px !important;
+}
+
+.mides-pd-editor__block-tipo {
+  font-size: 11px;
+  color: #a0aec0;
+  margin: 0 !important;
+}
+
+/* Sidebar */
+.mides-pd-editor__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mides-pd-editor__monto {
+  background: #192854;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+}
+
+.mides-pd-editor__chips {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.mides-pd-editor__chip {
+  display: inline-block;
+  background: #e8edf7;
+  color: #192854;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin: 2px 2px 2px 0;
+}
+
+.mides-pd-editor__scard {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+}

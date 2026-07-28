@@ -1,0 +1,26 @@
+.infopub-tab-panel-editor {
+  border: 2px solid #E2E8F0;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.infopub-tab-panel-editor__header {
+  background: #192854;
+  color: #fff;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.infopub-tab-panel-editor__badge {
+  color: #fff;
+}
+
+.infopub-tab-panel-editor > .block-editor-inner-blocks {
+  padding: 16px;
+}

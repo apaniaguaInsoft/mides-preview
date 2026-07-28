@@ -1,0 +1,23 @@
+{
+  "skill_name": "gutenberg-bloque-mides",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Necesito un bloque nuevo para mostrar estadísticas del ministerio en la página de inicio. Cada estadística tiene: un número grande (ej. '2.5M'), una etiqueta (ej. 'Beneficiarios atendidos') y un ícono SVG subible desde la librería de medios. La sección tiene fondo azul oscuro de MIDES y se puede editar el título de la sección. Pueden haber entre 3 y 6 estadísticas.",
+      "expected_output": "Bloque completo con block.json, block.js (preview con fondo azul usando .mides-editor-preview--dark, panel items con .mides-panel-item y .mides-panel-item__label), editor.css (solo layout de grilla), render.php (sanitizado). El inspector muestra los items con el estilo estándar compartido.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "El bloque de autoridades (mides/autoridades) tiene sus propias clases .mides-autoridades-panel y .mides-autoridades-panel__name para los items del inspector. Eso duplica el estándar compartido. ¿Puedes actualizar el bloque para que use las clases compartidas .mides-panel-item y .mides-panel-item__label en su lugar, y también actualizar el preview para que use .mides-editor-preview?",
+      "expected_output": "block.js actualizado usando .mides-panel-item / .mides-panel-item__label en los items del inspector. editor.css limpio (sin las clases de panel item propias). Preview del bloque usando .mides-editor-preview. Las clases .mides-autoridades-panel y .mides-autoridades-panel__name eliminadas.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Quiero un bloque para la sección 'Cómo funciona' que explique el proceso para acceder a los programas sociales. Cada paso tiene: número de paso, título corto y descripción. La sección tiene fondo blanco, título editable, y pueden agregarse entre 3 y 5 pasos. Necesita mostrar los pasos en el editor con numeración visible.",
+      "expected_output": "Bloque completo con preview visual en el editor usando .mides-editor-preview (fondo blanco), items del inspector con .mides-panel-item. El preview del canvas muestra los pasos numerados con sus títulos.",
+      "files": []
+    }
+  ]
+}

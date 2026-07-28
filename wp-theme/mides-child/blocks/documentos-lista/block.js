@@ -7,7 +7,6 @@
   var InspectorControls = wp.blockEditor.InspectorControls;
   var PanelBody         = wp.components.PanelBody;
   var TextControl       = wp.components.TextControl;
-  var TextareaControl   = wp.components.TextareaControl;
   var RangeControl      = wp.components.RangeControl;
   var ToggleControl     = wp.components.ToggleControl;
   var CheckboxControl   = wp.components.CheckboxControl;
@@ -50,19 +49,6 @@
         'div', blockProps,
 
         el(InspectorControls, null,
-
-          el(PanelBody, { title: 'Encabezado', initialOpen: true },
-            el(TextControl, {
-              label: 'Título',
-              value: attrs.titulo,
-              onChange: function (v) { setAttrs({ titulo: v }); }
-            }),
-            el(TextareaControl, {
-              label: 'Subtítulo',
-              value: attrs.subtitulo,
-              onChange: function (v) { setAttrs({ subtitulo: v }); }
-            })
-          ),
 
           el(PanelBody, { title: 'Categorías — ' + catLabel, initialOpen: true },
             isLoading
@@ -115,7 +101,7 @@
         ),
 
         el('span', { className: 'mides-docs-editor__icon' }, '📄'),
-        el('h3', null, attrs.titulo || 'Documentos'),
+        el('h3', null, 'Documentos'),
         el('p', null, catLabel),
         el('p', null,
           el('small', null,

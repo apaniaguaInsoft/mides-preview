@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/contacto-mapa-form",
+  "title": "Contacto — Mapa y Formulario",
+  "description": "Sección con mapa de Google Maps y formulario de contacto (WPForms).",
+  "category": "layout",
+  "icon": "location",
+  "supports": { "html": false, "align": ["full"] },
+  "attributes": {
+    "align":          { "type": "string", "default": "full" },
+    "tituloMapa":     { "type": "string", "default": "Nuestra Ubicación" },
+    "mapaUrl":        { "type": "string", "default": "https://maps.google.com/maps?q=Ministerio+de+Desarrollo+Social+MIDES+5a+Avenida+8-78+Zona+9+Guatemala&output=embed&z=16" },
+    "mapaPie":        { "type": "string", "default": "5a. Av. 8-78 Zona 9, Guatemala — Edificio Plaza Lauderdale" },
+    "formId":         { "type": "number", "default": 60 },
+    "formTitulo":     { "type": "string", "default": "Envíanos un Mensaje" },
+    "formDescripcion":{ "type": "string", "default": "Tu dirección de correo electrónico no será publicada. Los campos requeridos están marcados con *" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

@@ -1,0 +1,21 @@
+/* Block-specific preview styles for mides/autoridades.
+   Inspector panel items use the shared .mides-panel-item / .mides-panel-item__label
+   classes from editor-shared.css — no local overrides needed. */
+
+/* ── Preview grid ──────────────────────────────────────────────────────── */
+.mides-editor-preview__title--center { text-align: center; }
+
+.mides-autoridades-editor__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.mides-autoridades-editor__card { text-align: center; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px 12px; }
+
+/* ── Avatar sizes ──────────────────────────────────────────────────────── */
+/* Full-size avatar inside the card preview */
+.mides-autoridades-editor__avatar { width: 80px; height: 80px; margin: 0 auto 8px; }
+/* Small avatar inside the inspector panel item */
+.mides-autoridades-editor__avatar-sm { width: 64px; height: 64px; margin: 4px 0; }
+
+/* ── Card content ──────────────────────────────────────────────────────── */
+.mides-autoridades-editor__foto { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 8px; display: block; }
+.mides-autoridades-editor__cargo { font-size: 11px; color: #F2A119; font-weight: 700; display: block; }
+.mides-autoridades-editor__nombre { font-size: 13px; font-weight: 700; color: #192854; margin: 4px 0 2px; }
+.mides-autoridades-editor__puesto { font-size: 11px; color: #718096; }

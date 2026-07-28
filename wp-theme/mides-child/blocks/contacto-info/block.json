@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/contacto-info",
+  "title": "Contacto — Tarjetas de Info",
+  "description": "Sección con las 3 tarjetas de contacto: dirección, teléfonos y correo.",
+  "category": "layout",
+  "icon": "id",
+  "supports": { "html": false, "align": ["full"] },
+  "attributes": {
+    "align":       { "type": "string", "default": "full" },
+    "tituloDir":   { "type": "string", "default": "Dirección" },
+    "tituloTel":   { "type": "string", "default": "Teléfonos" },
+    "tituloMail":  { "type": "string", "default": "Correo Electrónico" },
+    "iconDirId":   { "type": "number", "default": 0 },
+    "iconDirUrl":  { "type": "string", "default": "" },
+    "iconTelId":   { "type": "number", "default": 0 },
+    "iconTelUrl":  { "type": "string", "default": "" },
+    "iconMailId":  { "type": "number", "default": 0 },
+    "iconMailUrl": { "type": "string", "default": "" },
+    "direccion1":  { "type": "string", "default": "5a. Avenida 8-78 Zona 9" },
+    "direccion2":  { "type": "string", "default": "Guatemala, Guatemala" },
+    "edificio":    { "type": "string", "default": "Edificio Plaza Lauderdale" },
+    "horario":     { "type": "string", "default": "Lunes a Viernes, 8:00 — 16:00 hrs" },
+    "telefono1":   { "type": "string", "default": "+502 2300-5400" },
+    "telefono2":   { "type": "string", "default": "+502 2302-6900" },
+    "telefono3":   { "type": "string", "default": "+502 2302-6800" },
+    "correo":      { "type": "string", "default": "info@mides.gob.gt" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

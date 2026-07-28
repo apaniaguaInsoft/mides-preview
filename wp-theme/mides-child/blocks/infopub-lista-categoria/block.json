@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/infopub-lista-categoria",
+  "title": "Info Pública — Lista por Categoría",
+  "description": "Panel de documentos de una categoría del CPT, muestra una lista de links descargables.",
+  "category": "layout",
+  "icon": "list-view",
+  "keywords": ["infopub", "documentos", "lista", "categoria", "mides"],
+  "supports": { "html": false },
+  "attributes": {
+    "tag":         { "type": "string", "default": "Documentos" },
+    "titulo":      { "type": "string", "default": "Título del panel" },
+    "descripcion": { "type": "string", "default": "" },
+    "categoriaId": { "type": "number", "default": 0 },
+    "icono":       { "type": "string", "default": "globe" },
+    "columnas":    { "type": "number", "default": 5 }
+  },
+  "editorScript": "file:./block.js"
+}

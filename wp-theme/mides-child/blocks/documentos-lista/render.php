@@ -2,8 +2,6 @@
 /**
  * Render callback del bloque Documentos Lista.
  */
-$titulo           = $attributes['titulo']          ?? 'Documentos';
-$subtitulo        = $attributes['subtitulo']       ?? '';
 $max_docs         = (int) ( $attributes['maxDocumentos'] ?? 100 );
 $por_pagina       = (int) ( $attributes['porPagina']     ?? 9 );
 $mostrar_buscador  = (bool) ( $attributes['mostrarBuscador'] ?? true );
@@ -48,17 +46,6 @@ $instance_id = 'docs-' . wp_unique_id();
 
 <section class="docs-section">
   <div class="container">
-
-    <?php if ( $titulo || $subtitulo ) : ?>
-    <div class="section-header">
-      <?php if ( $titulo ) : ?>
-      <h2 class="section-title"><?php echo esc_html( $titulo ); ?></h2>
-      <?php endif; ?>
-      <?php if ( $subtitulo ) : ?>
-      <p class="docs-subtitle"><?php echo esc_html( $subtitulo ); ?></p>
-      <?php endif; ?>
-    </div>
-    <?php endif; ?>
 
     <?php if ( $mostrar_buscador ) : ?>
     <div class="news-search-wrap">

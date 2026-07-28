@@ -1,0 +1,23 @@
+{
+  "skill_name": "block-content-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit all blocks in the MIDES theme and tell me which ones have hardcoded texts or images that can't be edited from the WordPress admin.",
+      "expected_output": "A per-block report with texts/images classified as editable or hardcoded, followed by a summary table. Should correctly identify blocks with issues vs fully editable ones.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Revisa el bloque contacto-info — ¿tiene textos hardcodeados que no se puedan cambiar desde el editor de WordPress?",
+      "expected_output": "A focused audit of only the contacto-info block, with clear classification of each text and image found in render.php.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I just created a new block called hero-interior. Can you audit it and tell me if it follows the editability standard — all user-facing texts and images should be editable from Gutenberg?",
+      "expected_output": "Audit of hero-interior block only. Should read all three files and report findings clearly, including any missing editor controls for attributes that exist in block.json.",
+      "files": []
+    }
+  ]
+}

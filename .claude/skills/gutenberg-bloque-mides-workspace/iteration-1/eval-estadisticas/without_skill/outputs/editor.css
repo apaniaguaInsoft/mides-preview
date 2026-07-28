@@ -1,0 +1,64 @@
+/* Estadísticas Ministerio — estilos específicos del editor
+   Los patrones comunes (mides-editor-preview, mides-panel-item, etc.)
+   vienen de editor-shared.css y no se repiten aquí. */
+
+/* Centrar el título de la sección */
+.mides-estadisticas-editor__title {
+  text-align: center;
+  margin-bottom: 24px !important;
+}
+
+/* Grilla de estadísticas — adaptable a 3–6 ítems */
+.mides-estadisticas-editor__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+/* Card de cada estadística */
+.mides-estadisticas-editor__card {
+  text-align: center;
+  padding: 16px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+/* Placeholder del ícono cuando aún no se ha subido */
+.mides-estadisticas-editor__icono-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  font-size: 9px;
+  color: #718096;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Ícono real (imagen de medios) */
+.mides-estadisticas-editor__icono {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px;
+  /* Filtrar a blanco para que se vea bien sobre fondo azul oscuro */
+  filter: brightness(0) invert(1);
+}
+
+/* Número / cifra grande */
+.mides-estadisticas-editor__numero {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #F2A119;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+/* Etiqueta debajo del número */
+.mides-estadisticas-editor__etiqueta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 !important;
+  line-height: 1.3;
+}

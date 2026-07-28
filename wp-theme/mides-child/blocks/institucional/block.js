@@ -12,6 +12,15 @@
 
   var CHAR_LIMIT = 160;
 
+  var THEME_URL = (window.MIDES_THEME_URL || '').replace(/\/$/, '');
+  var DEFAULT_ICONS = {
+    'Misión':       THEME_URL + '/img/Icono-Mision.svg',
+    'Visión':       THEME_URL + '/img/Icono-Vison.svg',
+    'Propósito':    THEME_URL + '/img/Icono-Proposito.svg',
+    'Valores':      THEME_URL + '/img/Icono-Valores.svg',
+    'Autoridades':  THEME_URL + '/img/Icono-Autoridades.svg',
+  };
+
   registerBlockType('mides/institucional', {
 
     edit: function (props) {
@@ -87,10 +96,14 @@
                 }, card.descripcion.length + ' / ' + CHAR_LIMIT + ' caracteres' + (card.descripcion.length > CHAR_LIMIT ? ' — el texto se verá cortado en la card' : '')),
 
                 el('p', { style: { fontSize: '11px', fontWeight: '600', margin: '4px 0' } }, 'Ícono'),
-                card.iconUrl && el('img', {
-                  src: card.iconUrl,
-                  className: 'mides-card-panel__icon-preview'
-                }),
+                (function () {
+                  var displayUrl = card.iconUrl || DEFAULT_ICONS[card.nombre] || '';
+                  return displayUrl && el('img', {
+                    src: displayUrl,
+                    className: 'mides-card-panel__icon-preview',
+                    title: card.iconUrl ? '' : 'Ícono por defecto del tema'
+                  });
+                })(),
                 el(MediaUploadCheck, null,
                   el(MediaUpload, {
                     onSelect: function (media) {
@@ -105,7 +118,7 @@
                         onClick: ref.open,
                         variant: 'secondary',
                         style: { fontSize: '11px', marginBottom: '4px' }
-                      }, card.iconId ? 'Cambiar ícono' : 'Subir ícono');
+                      }, card.iconId ? 'Cambiar ícono' : (DEFAULT_ICONS[card.nombre] ? 'Cambiar ícono por defecto' : 'Subir ícono'));
                     }
                   })
                 ),
@@ -167,8 +180,9 @@
         ),
         el('div', { className: 'mides-institucional-editor__cards' },
           cards.map(function (card, i) {
+            var previewIcon = card.iconUrl || DEFAULT_ICONS[card.nombre] || '';
             return el('div', { key: i, className: 'mides-institucional-editor__card' },
-              card.iconUrl && el('img', { src: card.iconUrl, style: { width: '36px', height: '36px', objectFit: 'contain', display: 'block', margin: '0 auto 6px' } }),
+              previewIcon && el('img', { src: previewIcon, style: { width: '36px', height: '36px', objectFit: 'contain', display: 'block', margin: '0 auto 6px' } }),
               card.nombre
             );
           })

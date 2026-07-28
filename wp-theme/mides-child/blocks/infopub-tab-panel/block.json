@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/infopub-tab-panel",
+  "title": "Info Pública — Panel de Tab",
+  "description": "Panel individual de una pestaña. Úsalo dentro del bloque 'Info Pública — Tabs'.",
+  "category": "layout",
+  "icon": "welcome-view-site",
+  "parent": ["mides/infopub-tabs"],
+  "keywords": ["infopub", "panel", "tab", "mides"],
+  "supports": { "html": false },
+  "attributes": {
+    "label": { "type": "string", "default": "Pestaña" },
+    "icono": { "type": "string", "default": "document" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

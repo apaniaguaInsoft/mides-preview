@@ -5,6 +5,7 @@
 get_header();
 
 $tipo_slug = sanitize_key( $_GET['tipo'] ?? '' );
+$buscar    = sanitize_text_field( $_GET['buscar'] ?? '' );
 $paged     = max( 1, get_query_var( 'paged' ) );
 
 $args = [
@@ -22,6 +23,10 @@ if ( $tipo_slug && $tipo_slug !== 'todos' ) {
 		'field'    => 'slug',
 		'terms'    => $tipo_slug,
 	] ];
+}
+
+if ( $buscar ) {
+	$args['s'] = $buscar;
 }
 
 $query = new WP_Query( $args );
@@ -52,10 +57,30 @@ $arrow_r   = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke
 <section class="noticias-archive" style="padding:56px 0 80px">
   <div class="container">
 
+    <form method="get" action="<?php echo esc_url( $archive_url ); ?>" class="news-search-form">
+      <?php if ( $tipo_slug ) : ?>
+        <input type="hidden" name="tipo" value="<?php echo esc_attr( $tipo_slug ); ?>" />
+      <?php endif; ?>
+      <div class="news-search-wrap">
+        <div class="news-search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" name="buscar" placeholder="Buscar noticias…"
+                 value="<?php echo esc_attr( $buscar ); ?>"
+                 class="news-search__input" autocomplete="off" />
+          <?php if ( $buscar ) : ?>
+            <a href="<?php echo esc_url( $tipo_slug ? add_query_arg( 'tipo', $tipo_slug, $archive_url ) : $archive_url ); ?>"
+               class="news-search__clear" aria-label="Limpiar búsqueda" style="display:flex;text-decoration:none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </a>
+          <?php endif; ?>
+        </div>
+      </div>
+    </form>
+
     <div class="news-filters">
       <?php foreach ( $tipos_filtro as $slug => $label ) :
         $active = ( $tipo_slug === $slug || ( ! $tipo_slug && $slug === '' ) ) ? ' active' : '';
-        $url    = $slug ? add_query_arg( 'tipo', $slug, $archive_url ) : $archive_url;
+        $url    = $slug ? add_query_arg( [ 'tipo' => $slug, 'buscar' => $buscar ?: null ], $archive_url ) : ( $buscar ? add_query_arg( 'buscar', $buscar, $archive_url ) : $archive_url );
       ?>
         <a href="<?php echo esc_url( $url ); ?>" class="news-filter<?php echo $active; ?>"><?php echo esc_html( $label ); ?></a>
       <?php endforeach; ?>
@@ -99,12 +124,12 @@ $arrow_r   = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke
         <div class="news-pagination">
           <?php for ( $p = 1; $p <= $query->max_num_pages; $p++ ) :
             $active = $p === $paged ? ' active' : '';
-            $page_url = add_query_arg( [ 'tipo' => $tipo_slug ?: null, 'paged' => $p > 1 ? $p : null ], $archive_url );
+            $page_url = add_query_arg( [ 'tipo' => $tipo_slug ?: null, 'buscar' => $buscar ?: null, 'paged' => $p > 1 ? $p : null ], $archive_url );
           ?>
             <a href="<?php echo esc_url( $page_url ); ?>" class="news-page<?php echo $active; ?>"><?php echo $p; ?></a>
           <?php endfor; ?>
           <?php if ( $paged < $query->max_num_pages ) :
-            $next_url = add_query_arg( [ 'tipo' => $tipo_slug ?: null, 'paged' => $paged + 1 ], $archive_url );
+            $next_url = add_query_arg( [ 'tipo' => $tipo_slug ?: null, 'buscar' => $buscar ?: null, 'paged' => $paged + 1 ], $archive_url );
           ?>
             <a href="<?php echo esc_url( $next_url ); ?>" class="news-page news-page--next">Siguiente <?php echo $arrow_r; ?></a>
           <?php endif; ?>
@@ -112,7 +137,9 @@ $arrow_r   = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke
       <?php endif; ?>
 
     <?php else : ?>
-      <p style="text-align:center;color:#718096;padding:60px 0">No hay publicaciones todavía.</p>
+      <p style="text-align:center;color:#718096;padding:60px 0">
+        <?php echo $buscar ? 'No se encontraron noticias para "' . esc_html( $buscar ) . '".' : 'No hay publicaciones todavía.'; ?>
+      </p>
     <?php endif; ?>
 
   </div>

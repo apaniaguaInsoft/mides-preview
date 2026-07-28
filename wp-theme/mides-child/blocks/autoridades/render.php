@@ -1,5 +1,6 @@
 <?php
 $titulo      = $attributes['titulo']      ?? 'Autoridades';
+$text_cv     = $attributes['textCv']      ?? 'Ver hoja de vida';
 $autoridades = $attributes['autoridades'] ?? [];
 $linea_svg   = get_stylesheet_directory_uri() . '/img/Linea-Resaltadora.svg';
 ?>
@@ -36,7 +37,7 @@ $linea_svg   = get_stylesheet_directory_uri() . '/img/Linea-Resaltadora.svg';
           <p class="equipo-card__nombre"><?php echo esc_html( $aut['nombre'] ?? '' ); ?></p>
           <p class="equipo-card__puesto"><?php echo esc_html( $aut['puesto'] ?? '' ); ?></p>
           <?php if ( $cv_url && $cv_url !== '#' ) : ?>
-            <a href="<?php echo esc_url( $cv_url ); ?>" class="equipo-card__cv">Ver hoja de vida</a>
+            <a href="<?php echo esc_url( $cv_url ); ?>" class="equipo-card__cv" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $text_cv ); ?></a>
           <?php endif; ?>
         </div>
       </div>

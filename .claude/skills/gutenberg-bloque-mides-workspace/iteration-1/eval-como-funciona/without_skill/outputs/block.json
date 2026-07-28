@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/como-funciona",
+  "title": "Cómo Funciona",
+  "description": "Sección que explica el proceso paso a paso para acceder a los programas sociales.",
+  "category": "layout",
+  "icon": "list-view",
+  "supports": { "html": false, "align": ["full"], "spacing": false },
+  "attributes": {
+    "align":  { "type": "string", "default": "full" },
+    "titulo": { "type": "string", "default": "¿Cómo funciona?" },
+    "pasos": {
+      "type": "array",
+      "default": [
+        { "numero": "01", "titulo": "Regístrate", "descripcion": "Acércate a uno de nuestros puntos de atención y presenta tu DPI para iniciar el proceso de registro en el sistema." },
+        { "numero": "02", "titulo": "Verificación", "descripcion": "Un técnico de MIDES verificará tu información y validará que cumples con los criterios de elegibilidad del programa." },
+        { "numero": "03", "titulo": "Aprobación", "descripcion": "Recibirás una notificación con el resultado de tu solicitud. Si es aprobada, se te indicará cómo acceder al beneficio." }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "numero":      { "type": "string" },
+          "titulo":      { "type": "string" },
+          "descripcion": { "type": "string" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

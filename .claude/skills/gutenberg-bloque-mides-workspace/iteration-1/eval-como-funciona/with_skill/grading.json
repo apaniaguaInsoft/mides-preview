@@ -1,0 +1,55 @@
+{
+  "expectations": [
+    {
+      "text": "block.js usa mides-editor-preview sin --dark (fondo blanco)",
+      "passed": true,
+      "evidence": "preview present, --dark absent"
+    },
+    {
+      "text": "block.js usa mides-panel-item para contenedores de pasos",
+      "passed": true,
+      "evidence": "grep mides-panel-item"
+    },
+    {
+      "text": "block.js usa mides-panel-item__label",
+      "passed": true,
+      "evidence": "grep mides-panel-item__label"
+    },
+    {
+      "text": "editor.css no define clases de panel item propias",
+      "passed": true,
+      "evidence": "no panel-item duplicates in editor.css"
+    },
+    {
+      "text": "Preview muestra numeración de pasos en el canvas del editor",
+      "passed": true,
+      "evidence": "numero/paso rendered in canvas preview"
+    },
+    {
+      "text": "block.json incluye editorScript y editorStyle",
+      "passed": true,
+      "evidence": "both present in block.json"
+    },
+    {
+      "text": "render.php sanitiza con esc_html()",
+      "passed": true,
+      "evidence": "grep esc_html in render.php"
+    },
+    {
+      "text": "save() retorna null",
+      "passed": true,
+      "evidence": "grep return null in block.js"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "total_tokens": 26823,
+    "duration_ms": 97156,
+    "total_duration_seconds": 97.2
+  }
+}

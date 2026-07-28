@@ -11,8 +11,13 @@
     "align":              { "type": "string", "default": "full" },
     "titulo":             { "type": "string", "default": "GEDS" },
     "intro":              { "type": "string", "default": "El MIDES coordina y participa en las Mesas Técnicas del Gabinete Específico de Desarrollo Social —GEDS—, espacios interinstitucionales que articulan la política pública en torno a los grupos poblacionales más vulnerables de Guatemala." },
-    "urlOrdinarias":      { "type": "string", "default": "" },
-    "urlExtraordinarias": { "type": "string", "default": "" },
+    "urlOrdinarias":        { "type": "string", "default": "" },
+    "urlExtraordinarias":   { "type": "string", "default": "" },
+    "labelRectora":         { "type": "string", "default": "Entidad rectora:" },
+    "labelOrdinarias":      { "type": "string", "default": "Reuniones Ordinarias" },
+    "textoOrdinarias":      { "type": "string", "default": "Ver galería de sesiones" },
+    "labelExtraordinarias": { "type": "string", "default": "Reuniones Extraordinarias" },
+    "textoExtraordinarias": { "type": "string", "default": "Ver galería de sesiones" },
     "mesas": {
       "type": "array",
       "default": [

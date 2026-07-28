@@ -67,7 +67,24 @@
       "Bash(php -l /Users/apaniagua/Proyectos/mides-site/wp-theme/mides-child/functions.php)",
       "Read(//usr/local/bin/**)",
       "Read(//opt/homebrew/bin/**)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "Bash(grep -rn 'InnerBlocks\\\\|inner_blocks\\\\|render_callback.*\\\\$block\\\\|\\\\$block_instance' /Users/apaniagua/Proyectos/mides-site/wp-theme/mides-child/blocks/)",
+      "Bash(npm install *)",
+      "Bash(xargs ls -la)",
+      "mcp__wordpress__mcp-adapter-execute-ability",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; cat {}')",
+      "Bash(mkdir -p /Users/apaniagua/Proyectos/mides-site/.claude/skills/gutenberg-bloque-mides/references)",
+      "Bash(mkdir -p /Users/apaniagua/Proyectos/mides-site/.claude/skills/gutenberg-bloque-mides/evals)",
+      "Bash(nohup python3 eval-viewer/generate_review.py /Users/apaniagua/Proyectos/mides-site/.claude/skills/gutenberg-bloque-mides-workspace/iteration-1 --skill-name gutenberg-bloque-mides --benchmark /Users/apaniagua/Proyectos/mides-site/.claude/skills/gutenberg-bloque-mides-workspace/iteration-1/benchmark.json)",
+      "Read(//tmp/**)",
+      "Bash(python3.11 --version)",
+      "Bash(python3.12 --version)",
+      "Bash(python3.13 --version)",
+      "Bash(brew list *)",
+      "Bash(/opt/homebrew/bin/python3 --version)",
+      "Bash(open *)",
+      "Bash(kill 89336)",
+      "Bash(grep -v \"^--$\")"
     ]
   },
   "enabledMcpjsonServers": [

@@ -66,11 +66,13 @@ if ( empty( $posts ) ) {
         ?>
         <article class="noticia-card<?php echo $is_first; ?>">
           <div class="noticia-card__body">
-            <div class="noticia-card__tags">
-              <span class="news-tag"><?php echo esc_html( $tag_label ); ?></span>
+            <div class="noticia-card__top">
+              <div class="noticia-card__tags">
+                <span class="news-tag"><?php echo esc_html( $tag_label ); ?></span>
+              </div>
+              <h3 class="noticia-card__title"><?php echo esc_html( get_the_title( $post->ID ) ); ?></h3>
+              <p class="noticia-card__desc"><?php echo esc_html( $excerpt ); ?></p>
             </div>
-            <h3 class="noticia-card__title"><?php echo esc_html( get_the_title( $post->ID ) ); ?></h3>
-            <p class="noticia-card__desc"><?php echo esc_html( $excerpt ); ?></p>
             <a href="<?php echo esc_url( $post_url ); ?>" class="noticias__link">
               Ver más
               <img src="<?php echo esc_url( $arrow_svg ); ?>" alt="" class="noticias__link-arrow" />

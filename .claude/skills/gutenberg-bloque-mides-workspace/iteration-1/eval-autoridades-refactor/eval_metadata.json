@@ -1,0 +1,35 @@
+{
+  "eval_id": 2,
+  "eval_name": "refactor-autoridades-estandar",
+  "prompt": "El bloque de autoridades tiene sus propias clases .mides-autoridades-panel y .mides-autoridades-panel__name. Actualizarlo para que use .mides-panel-item y .mides-panel-item__label en su lugar, y que el preview use .mides-editor-preview.",
+  "assertions": [
+    {
+      "text": "block.js usa .mides-panel-item en lugar de .mides-autoridades-panel para los contenedores de ítems",
+      "type": "content_check"
+    },
+    {
+      "text": "block.js usa .mides-panel-item__label en lugar de .mides-autoridades-panel__name",
+      "type": "content_check"
+    },
+    {
+      "text": "block.js usa .mides-editor-preview en el wrapper principal del preview del canvas",
+      "type": "content_check"
+    },
+    {
+      "text": "editor.css NO contiene la clase .mides-autoridades-panel (fue eliminada ya que la reemplaza .mides-panel-item)",
+      "type": "absence_check"
+    },
+    {
+      "text": "editor.css NO contiene la clase .mides-autoridades-panel__name (fue eliminada)",
+      "type": "absence_check"
+    },
+    {
+      "text": "La funcionalidad del bloque se mantiene: los campos cargo, nombre, puesto, cvUrl, foto siguen presentes en el inspector",
+      "type": "content_check"
+    },
+    {
+      "text": "save() sigue retornando null",
+      "type": "content_check"
+    }
+  ]
+}

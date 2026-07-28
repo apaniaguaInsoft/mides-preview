@@ -1,0 +1,54 @@
+/* mides/estadisticas — estilos específicos del bloque en el editor.
+   Los patrones comunes (preview wrapper, panel-item, media-label, img-placeholder)
+   vienen de editor-shared.css y no se repiten aquí. */
+
+/* ── Layout del preview canvas ───────────────────────────────────────── */
+.mides-estadisticas-editor__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* ── Card de estadística en el preview ───────────────────────────────── */
+.mides-estadisticas-editor__card {
+  text-align: center;
+  padding: 16px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+/* ── Ícono en el preview ─────────────────────────────────────────────── */
+.mides-estadisticas-editor__icono-wrap {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Placeholder de ícono cuando no se ha subido imagen */
+.mides-estadisticas-editor__icono-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+/* ── Cifra / número grande ───────────────────────────────────────────── */
+.mides-estadisticas-editor__numero {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  color: #F2A119;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+/* ── Etiqueta debajo del número ──────────────────────────────────────── */
+.mides-estadisticas-editor__etiqueta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}

@@ -63,25 +63,20 @@ $socials = [
 
       <!-- Links rápidos -->
       <div class="footer__col footer__col--links">
-        <?php if ( has_nav_menu( 'menu-footer' ) ) : ?>
-          <?php wp_nav_menu( [
-            'theme_location' => 'menu-footer',
-            'container'      => false,
-            'menu_class'     => 'footer__links',
-            'fallback_cb'    => false,
-            'depth'          => 1,
-          ] ); ?>
-        <?php else : ?>
-          <ul class="footer__links">
-            <li><a href="#">Fondo de Desarrollo Social</a></li>
-            <li><a href="#">Fondo de Protección Social</a></li>
-            <li><a href="#">Registro Social de Hogares</a></li>
-            <li><a href="#">Acceso a la Información Pública</a></li>
-            <li><a href="#">Mano a Mano</a></li>
-            <li><a href="#">Denuncia</a></li>
-            <li><a href="#">GEDS</a></li>
-          </ul>
-        <?php endif; ?>
+        <?php
+        $footer_menu_args = [
+          'container'   => false,
+          'menu_class'  => 'footer__links',
+          'fallback_cb' => false,
+          'depth'       => 1,
+        ];
+        if ( has_nav_menu( 'menu-footer' ) ) {
+          $footer_menu_args['theme_location'] = 'menu-footer';
+        } else {
+          $footer_menu_args['theme_location'] = 'menu-principal';
+        }
+        wp_nav_menu( $footer_menu_args );
+        ?>
       </div>
 
     </div>

@@ -1,0 +1,39 @@
+{
+  "eval_id": 3,
+  "eval_name": "crear-bloque-como-funciona",
+  "prompt": "Quiero un bloque para la sección 'Cómo funciona' con pasos numerados. Cada paso tiene número, título y descripción. Fondo blanco, título editable, entre 3-5 pasos.",
+  "assertions": [
+    {
+      "text": "block.js usa .mides-editor-preview (sin modificador --dark ya que el fondo es blanco) para el wrapper del preview",
+      "type": "content_check"
+    },
+    {
+      "text": "block.js usa .mides-panel-item para los contenedores de pasos en el InspectorControls",
+      "type": "content_check"
+    },
+    {
+      "text": "block.js usa .mides-panel-item__label para los labels de cada paso en el inspector",
+      "type": "content_check"
+    },
+    {
+      "text": "editor.css NO define clases de panel item propias que dupliquen .mides-panel-item",
+      "type": "absence_check"
+    },
+    {
+      "text": "El preview visual muestra los pasos con numeración visible (número de paso renderizado en el canvas del editor)",
+      "type": "visual_check"
+    },
+    {
+      "text": "block.json incluye editorScript y editorStyle",
+      "type": "content_check"
+    },
+    {
+      "text": "render.php sanitiza los textos con esc_html()",
+      "type": "content_check"
+    },
+    {
+      "text": "save() retorna null",
+      "type": "content_check"
+    }
+  ]
+}

@@ -28,7 +28,7 @@ add_action( 'init', function (): void {
 		],
 		'public'             => true,
 		'publicly_queryable' => true,
-		'has_archive'        => 'documentos',
+		'has_archive'        => false,
 		'rewrite'            => [ 'slug' => 'documentos', 'with_front' => false ],
 		'show_in_rest'       => true,
 		'supports'           => [ 'title', 'excerpt' ],

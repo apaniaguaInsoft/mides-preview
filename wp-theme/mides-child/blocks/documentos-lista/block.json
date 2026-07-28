@@ -14,8 +14,6 @@
   },
   "attributes": {
     "align":             { "type": "string", "default": "full" },
-    "titulo":            { "type": "string", "default": "Documentos" },
-    "subtitulo":         { "type": "string", "default": "Publicaciones y documentos oficiales del MIDES" },
     "maxDocumentos":     { "type": "number", "default": 100 },
     "porPagina":         { "type": "number", "default": 9 },
     "mostrarBuscador":   { "type": "boolean","default": true },

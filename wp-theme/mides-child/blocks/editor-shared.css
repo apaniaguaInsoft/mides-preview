@@ -1,0 +1,96 @@
+/* MIDES Editor Design System
+   Cargado globalmente en el editor vía enqueue_block_editor_assets.
+   No importar desde block.json — aplica a todos los bloques MIDES automáticamente.
+   Para agregar clases nuevas: editar este archivo (no el editor.css de cada bloque). */
+
+/* ── Preview wrapper ──────────────────────────────────────────────────── */
+.mides-editor-preview {
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 6px;
+}
+.mides-editor-preview--dark  { background: #192854; }
+.mides-editor-preview--light { background: #F4F6F9; }
+
+/* Neutralizar el margin-bottom que Astra aplica a párrafos en el editor */
+.mides-editor-preview p { margin-bottom: 0 !important; }
+
+/* ── Tipografía del preview ───────────────────────────────────────────── */
+.mides-editor-preview__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #192854;
+  margin: 0 0 12px;
+}
+.mides-editor-preview__title--orange { color: #F2A119; }
+.mides-editor-preview--dark .mides-editor-preview__title { color: #F2A119; }
+
+.mides-editor-preview__intro {
+  font-size: 13px;
+  color: #718096;
+  margin: 0 0 20px;
+}
+.mides-editor-preview--dark .mides-editor-preview__intro { color: rgba(255,255,255,0.7); }
+
+/* ── Inspector panel items ────────────────────────────────────────────── */
+.mides-panel-item {
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #F9FAFB;
+}
+.mides-panel-item__label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #192854;
+  margin: 0 0 8px;
+}
+
+/* ── Media field label ────────────────────────────────────────────────── */
+.mides-editor-media-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #718096;
+  margin: 8px 0 2px;
+  display: block;
+}
+
+/* ── Imagen / avatar placeholder (tamaño lo define el editor.css del bloque) ── */
+.mides-editor-img-placeholder,
+.mides-editor-avatar-placeholder {
+  background: #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #718096;
+}
+.mides-editor-img-placeholder    { border-radius: 6px; }
+.mides-editor-avatar-placeholder { border-radius: 50%; }
+
+/* ── Placeholder para bloques con contenido dinámico ─────────────────── */
+.mides-editor-placeholder {
+  background: #F0F4FF;
+  border: 2px dashed #192854;
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  color: #192854;
+}
+.mides-editor-placeholder__icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+.mides-editor-placeholder__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #192854;
+  margin: 0 0 8px;
+}
+.mides-editor-placeholder__desc {
+  font-size: 0.85rem;
+  color: #718096;
+  margin: 0;
+}

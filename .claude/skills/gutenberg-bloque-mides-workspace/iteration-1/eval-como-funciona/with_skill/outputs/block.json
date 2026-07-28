@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/como-funciona",
+  "title": "Cómo funciona",
+  "description": "Sección de pasos para acceder a los programas sociales, con numeración visible y descripción por paso.",
+  "category": "layout",
+  "icon": "list-view",
+  "supports": { "html": false, "align": ["full"], "spacing": false },
+  "attributes": {
+    "align":  { "type": "string", "default": "full" },
+    "titulo": { "type": "string", "default": "Cómo funciona" },
+    "pasos": {
+      "type": "array",
+      "default": [
+        { "numero": "01", "titulo": "Regístrate",      "descripcion": "Ingresa tus datos personales en el sistema de registro." },
+        { "numero": "02", "titulo": "Evalúa tu caso",  "descripcion": "Un asesor revisará tu situación y te orientará sobre los programas disponibles." },
+        { "numero": "03", "titulo": "Recibe el apoyo", "descripcion": "Una vez aprobada tu solicitud, recibirás el beneficio asignado." }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "numero":      { "type": "string", "default": "" },
+          "titulo":      { "type": "string", "default": "" },
+          "descripcion": { "type": "string", "default": "" }
+        }
+      }
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

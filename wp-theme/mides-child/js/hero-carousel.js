@@ -38,5 +38,29 @@
   if (next) next.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
   dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
 
+  /* ── Swipe táctil ── */
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  section.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+  }, { passive: true });
+
+  section.addEventListener('touchend', function (e) {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+
+    // Solo actuar si el movimiento horizontal supera 50px y es mayor que el vertical
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+
+    if (dx < 0) {
+      goTo(current + 1); // swipe izquierda → siguiente
+    } else {
+      goTo(current - 1); // swipe derecha → anterior
+    }
+    resetAuto();
+  }, { passive: true });
+
   startAuto();
 })();

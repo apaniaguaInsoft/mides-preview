@@ -9,14 +9,15 @@
   "supports": { "html": false, "align": ["full"], "spacing": false },
   "attributes": {
     "align":  { "type": "string", "default": "full" },
-    "titulo": { "type": "string", "default": "Autoridades" },
+    "titulo":  { "type": "string", "default": "Autoridades" },
+    "textCv":  { "type": "string", "default": "Ver hoja de vida" },
     "autoridades": {
       "type": "array",
       "default": [
-        { "cargo": "Ministro",     "nombre": "Abelardo Pinto",      "puesto": "Ministerio de Desarrollo Social",    "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" },
-        { "cargo": "Viceministra", "nombre": "María Morales",       "puesto": "Administrativa y Financiera",        "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" },
-        { "cargo": "Viceministra", "nombre": "Bertha Zapeta",       "puesto": "Protección Social",                  "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" },
-        { "cargo": "Viceministra", "nombre": "Claudia Valenzuela",  "puesto": "Política, Planificación y Evaluación","fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "#" }
+        { "cargo": "Ministro",     "nombre": "Abelardo Pinto",      "puesto": "Ministerio de Desarrollo Social",    "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "" },
+        { "cargo": "Viceministra", "nombre": "María Morales",       "puesto": "Administrativa y Financiera",        "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "" },
+        { "cargo": "Viceministra", "nombre": "Bertha Zapeta",       "puesto": "Protección Social",                  "fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "" },
+        { "cargo": "Viceministra", "nombre": "Claudia Valenzuela",  "puesto": "Política, Planificación y Evaluación","fotoId": 0, "fotoUrl": "", "fotoAlt": "", "cvUrl": "" }
       ],
       "items": {
         "type": "object",

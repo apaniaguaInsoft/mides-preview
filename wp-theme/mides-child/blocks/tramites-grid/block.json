@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/tramites-grid",
+  "title": "Trámites — Grid",
+  "description": "Grid de tarjetas de trámites y servicios digitales del MIDES.",
+  "category": "layout",
+  "icon": "list-view",
+  "keywords": ["tramites", "servicios", "grid", "mides"],
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "spacing": false
+  },
+  "attributes": {
+    "align":         { "type": "string", "default": "full" },
+    "tituloSeccion": { "type": "string", "default": "Servicios Digitales" },
+    "introTexto":    { "type": "string", "default": "Realiza y consulta tus solicitudes de forma rápida y segura desde cualquier dispositivo. Selecciona la categoría que necesitas." },
+    "notaTexto":  { "type": "string",  "default": "Para realizar trámites necesitarás tu número de DPI. Si tienes inconvenientes, comunícate a nuestro PBX: +502 2300-5400 en horario de lunes a viernes de 8:00 a 16:00 horas." },
+
+    "t1Cat":     { "type": "string", "default": "General" },
+    "t1Desc":    { "type": "string", "default": "Consulta el catálogo completo de trámites simplificados disponibles en el MIDES." },
+    "t1Icono":   { "type": "string", "default": "lista" },
+    "t1Color":   { "type": "string", "default": "blue" },
+    "t1L1Texto": { "type": "string", "default": "Listado de Trámites Simplificados" },
+    "t1L1Url":   { "type": "string", "default": "https://tramites.mides.gob.gt/Vista/Tramites/frmCatalogoTramites.aspx" },
+    "t1L2Texto": { "type": "string", "default": "" },
+    "t1L2Url":   { "type": "string", "default": "" },
+
+    "t2Cat":     { "type": "string", "default": "FODES" },
+    "t2Desc":    { "type": "string", "default": "Fondo de Desarrollo Social — presenta quejas o ingresa solicitudes a programas internos." },
+    "t2Icono":   { "type": "string", "default": "documento" },
+    "t2Color":   { "type": "string", "default": "amber" },
+    "t2L1Texto": { "type": "string", "default": "Formato de Queja" },
+    "t2L1Url":   { "type": "string", "default": "https://fodes.gob.gt/formato-de-queja/" },
+    "t2L2Texto": { "type": "string", "default": "Ingresar Solicitud" },
+    "t2L2Url":   { "type": "string", "default": "https://fodes.gob.gt/programas-internos/" },
+
+    "t3Cat":     { "type": "string", "default": "Recursos Humanos" },
+    "t3Desc":    { "type": "string", "default": "Ingresa o da seguimiento a solicitudes relacionadas con el área de Recursos Humanos del MIDES." },
+    "t3Icono":   { "type": "string", "default": "personas" },
+    "t3Color":   { "type": "string", "default": "blue" },
+    "t3L1Texto": { "type": "string", "default": "Ingresar Solicitud" },
+    "t3L1Url":   { "type": "string", "default": "https://tramites.mides.gob.gt/Vista/Solicitud/RRHH/frmSolicitudRRHH.aspx" },
+    "t3L2Texto": { "type": "string", "default": "Consultar Solicitud" },
+    "t3L2Url":   { "type": "string", "default": "https://tramites.mides.gob.gt/Vista/Solicitud/RRHH/frmConsultaSolicitudRRHH.aspx" },
+
+    "t4Cat":     { "type": "string", "default": "Información Pública" },
+    "t4Desc":    { "type": "string", "default": "Consulta el estado de tu solicitud de acceso a la información pública enviada al MIDES." },
+    "t4Icono":   { "type": "string", "default": "busqueda" },
+    "t4Color":   { "type": "string", "default": "amber" },
+    "t4L1Texto": { "type": "string", "default": "Consultar Solicitud" },
+    "t4L1Url":   { "type": "string", "default": "https://infopublica.mides.gob.gt/pages/request/check-request" },
+    "t4L2Texto": { "type": "string", "default": "" },
+    "t4L2Url":   { "type": "string", "default": "" },
+
+    "t5Cat":     { "type": "string", "default": "Consultas y Reclamos" },
+    "t5Desc":    { "type": "string", "default": "¿Tienes alguna queja o reclamo? Ingresa tu caso o revisa el estado de una gestión previamente registrada." },
+    "t5Icono":   { "type": "string", "default": "chat" },
+    "t5Color":   { "type": "string", "default": "blue" },
+    "t5L1Texto": { "type": "string", "default": "Ingresar Solicitud" },
+    "t5L1Url":   { "type": "string", "default": "https://atencionyconsultas.mides.gob.gt/Vista/wf_ingreso_reclamo.aspx" },
+    "t5L2Texto": { "type": "string", "default": "Consultar Solicitud" },
+    "t5L2Url":   { "type": "string", "default": "https://atencionyconsultas.mides.gob.gt/Vista/wf_consultar_gestion.aspx" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

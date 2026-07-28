@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mides/infopub-tabs",
+  "title": "Info Pública — Tabs",
+  "description": "Contenedor con pestañas para la sección de Información Pública. Acepta bloques 'Info Pública — Panel de Tab' como hijos.",
+  "category": "layout",
+  "icon": "category",
+  "keywords": ["infopub", "tabs", "pestañas", "mides"],
+  "supports": { "html": false, "align": ["full"] },
+  "attributes": {
+    "align": { "type": "string", "default": "full" }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle":  "file:./editor.css"
+}

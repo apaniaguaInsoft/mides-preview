@@ -1,0 +1,23 @@
+{
+  "skill_name": "responsive-audit",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Revisa si el bloque hero-carousel es responsive en móvil y tablet. El usuario reportó que el carrusel se ve mal en pantallas pequeñas.",
+      "expected_output": "Reporte de responsividad del bloque hero-carousel con tabla de problemas encontrados (severidad, archivo, referencia CSS), y sugerencia de fix si hay problemas.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Necesito una auditoría completa de responsividad de todos los bloques del tema. Quiero saber cuáles se ven bien y cuáles tienen problemas en tablet o móvil.",
+      "expected_output": "Reporte general con una sección por bloque, estado general con emoji, tabla de problemas encontrados, y resumen final con tabla comparativa de todos los bloques.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "El bloque de autoridades no se ve bien en móvil, los cards se salen de la pantalla. Revísalo y arréglalo.",
+      "expected_output": "Auditoría del bloque autoridades, identificación del problema (probablemente grid sin breakpoint móvil), aplicación del fix en mides.css, y docker cp para subir el cambio.",
+      "files": []
+    }
+  ]
+}
